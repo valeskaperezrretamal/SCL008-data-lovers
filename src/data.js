@@ -26,7 +26,7 @@ GenerateSubList = (obj,subprop)  =>{
             Arroutput.push(obj[prop][subprop]);
         };
         return Arroutput;
-      };[subprop]);
+      }[subprop]);
   };
   return Arroutput;
 };
