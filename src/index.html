@@ -6,11 +6,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+      <section id="countryFilter">
+          <p>Selecciona el país de tu interés:</p>
+            <select name="" id="selectCountry">  <!--Select despliega las opciones disponibles a seleccionar, se manejan desde el DOM.-->
+                <option value="0"></option>
+                <option value="BRA">Brasil</option>
+                <option value="CHL">Chile</option>
+                <option value="MEX">México</option>
+                <option value="PER">Perú</option>                                   
+            </select>
+      </section>
+    
+      <div id="indicatorsDisplay"></div>      <!--div vacío dondense van a imprimir los indicadores del país seleccionado.-->
+    
+
+
     <div id="root"></div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
     <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+     <script src="./data/worldbank/worldbank.js"></script>
     <!-- <script src="./data/lol/lol.js"></script> -->
     <script src="data.js"></script>
     <script src="main.js"></script>

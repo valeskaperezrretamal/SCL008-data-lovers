@@ -8,3 +8,20 @@ const example = () => {
 };
 
 window.example = example;
+
+//Inicio función filtrar
+
+const countryFilter = (data,condition) => {
+  let indicatorByCountry = data.filter (element => {
+    return   element.countryName === condition
+  })
+   return indicatorByCountry;
+
+} 
+
+window.countryFilter =countryFilter; 
+
+//Termina función filtrar
+
+
+
