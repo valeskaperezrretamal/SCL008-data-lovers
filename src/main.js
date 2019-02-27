@@ -1,4 +1,4 @@
-
+//variables
 
 let actualCountry;
 let actualGender;
