@@ -8,6 +8,7 @@ const example = () => {
 };
 
 window.example = example;
+
 //funcion en la cual entra un objeto y sale un array con los elementos del objeto
 const GenerateList = (obj)  =>{
   let Arroutput=[];
@@ -37,6 +38,10 @@ const filterForMen = (indicator) =>{
   else if(indicator.indexOf("femenino")>=0){return false;}
   else { return true;}
 }
+
+
+
+
 
 
 

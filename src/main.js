@@ -6,6 +6,7 @@ let actualIndicator;
 let Indicators;
 //Funciones
 
+
 // función que llena el <selec> identificado con el id indicado como parametro, con los elementos del array list
 
 const fillList = (list,id) =>{
@@ -51,4 +52,5 @@ selectGender.addEventListener("click", ()=>{
 selectIndicators.addEventListener("click", ()=>{
     
 })
+
 
