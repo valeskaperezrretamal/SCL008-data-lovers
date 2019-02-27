@@ -12,8 +12,8 @@
     <h1>Indicadores LATAM</h1>
 
     <!--Empieza menu principal-->
-    <nav>
-      <ul>
+    <nav id="menu">
+      <ul class="optionsMenu">
         <li> <a href="#index">Indice</a></li>
         <li> <a href="#definition">¿Qué es un indicador?</a></li>
         <li> <a href="#indicators">Indicadores</a></li>
@@ -26,22 +26,31 @@
     <main>
       <section id= "index">
         <h3>Inicio</h3>
-        <p>Si en tus planes esta mudarte dentro de Latino América, ya sea por que te surgio la oportunidad, porque eres de espiritu aventurero o por una necesidad especifica,  
-            indicadores LATAM te ayuda  a tomar una decisión mas informada  en tu proceso de migración . 
-            Aqui encontraras información economica, social y demografica relevante sobre Brasil, México, Chile y Peru.
+        <p>
+          Si en tus planes esta mudarte dentro de Latino América, ya sea por que te surgio la oportunidad, porque eres de espiritu aventurero o por una necesidad especifica,  
+          indicadores LATAM te ayuda  a tomar una decisión mas informada  en tu proceso de migración . 
+          Aqui encontraras información economica, social y demografica relevante sobre Brasil, México, Chile y Peru.
        </p>
        
       </section>
       <section id= "definition">
-        <h3>¿Que es un indicador?</h3>
-        <p>Los indicadores son datos estadisticos que nos permiten entender como estuvo, está o puede estar la economía, demografía o diferentes fenómenos sociales de un país .
-             Informarte sobre los indicadores del país a donde vas te ayudará a tener una mejor perspectiva y conocimiento de este.
-            </p>
+        <h3>¿Qué es un indicador?</h3>
+        <p>
+          Los indicadores son datos estadisticos que nos permiten entender como estuvo, está o puede estar la economía, demografía o diferentes fenómenos sociales de un país .
+          Informarte sobre los indicadores del país a donde vas te ayudará a tener una mejor perspectiva y conocimiento de este.
+        </p>
 
       </section>
       <section id= "indicators">
-        
-        
+        <p>¿Sobre que país te quieres informar?</p>
+        <select name="" id="countryOptions">       <!--select lo usamos para que se desplieguen las opciones-->
+            <option value="">Seleccionar...</option>
+            <option value="BRA">Brasil</option>
+            <option value="CHL">Chile</option>
+            <option value="MEX">México</option>
+            <option value="PER">Perú</option>
+        </select>
+        <div id="indicatorsByCountry"></div>   <!--div vacio donde se mostrarán los indicadores por país-->
       </section>
 
     </main>
