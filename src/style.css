@@ -1,0 +1,15 @@
+*{
+    padding: 0 auto;   /*quitar marjen y padding de default*/
+    margin: 0 auto;
+}
+
+/*Inicia sección de barra menu*/
+
+.optionsMenu li{
+
+    list-style: none;     /*Quitarle a la lista los puntos */
+    display: inline-block; /*Mostrar la barra en horizontal*/
+    margin-right: 35px;   /*Espacio entre las palabras de la barra*/
+}
+
+/*Termina sección de barra menu*/
