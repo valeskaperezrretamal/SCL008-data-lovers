@@ -1,4 +1,11 @@
-*{
+
+
+
+  
+#selectIndicators{
+    display: none;
+  }
+
     padding: 0 auto;   /*quitar marjen y padding de default*/
     margin: 0 auto;
 }
@@ -13,3 +20,4 @@
 }
 
 /*Termina sección de barra menu*/
+

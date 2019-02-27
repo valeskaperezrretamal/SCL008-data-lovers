@@ -8,6 +8,7 @@
   </head>
   <body>
 
+
     <header>
     <h1>Indicadores LATAM</h1>
 
@@ -17,6 +18,7 @@
         <li> <a href="#index">Indice</a></li>
         <li> <a href="#definition">¿Qué es un indicador?</a></li>
         <li> <a href="#indicators">Indicadores</a></li>
+
       </ul>
     </nav>
 
@@ -24,6 +26,8 @@
 
 
     <main>
+
+
       <section id= "index">
         <h3>Inicio</h3>
         <p>
@@ -40,18 +44,27 @@
           Informarte sobre los indicadores del país a donde vas te ayudará a tener una mejor perspectiva y conocimiento de este.
         </p>
 
+           
       </section>
-      <section id= "indicators">
-        <p>¿Sobre que país te quieres informar?</p>
-        <select name="" id="countryOptions">       <!--select lo usamos para que se desplieguen las opciones-->
-            <option value="">Seleccionar...</option>
-            <option value="BRA">Brasil</option>
-            <option value="CHL">Chile</option>
-            <option value="MEX">México</option>
-            <option value="PER">Perú</option>
+      <select id= "selectCountry" >
+          <option value="BRA">Brasil</option>
+          <option value="CHL">Chile</option>
+          <option value="MEX">Mexico</option>
+          <option value="PER">Perú</option>
         </select>
-        <div id="indicatorsByCountry"></div>   <!--div vacio donde se mostrarán los indicadores por país-->
-      </section>
+       
+        <select id="selectGender">
+          <optgroup label="Elige el sexo" > 
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+          </optgroup>
+        </select>
+
+         
+        <select id="selectIndicators" size=15 >
+          </select>
+         
+            
 
     </main>
 
