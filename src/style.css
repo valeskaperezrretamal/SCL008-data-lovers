@@ -1,0 +1,18 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+  .centrado {
+    text-align: center;
+  }
+  .centrado1{
+    text-align: center;
+  }
+  
+  #color1{
+background-color: rgba(red, green, blue, alpha) ;
+  }
+
+  #selectIndicators{
+    display: none;
+  }
