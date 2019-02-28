@@ -1,28 +1,27 @@
+/*Inicia sección de barra menu*/
 
-  
 #selectIndicators{
-    display: none;
-  }
-
-*{
-    padding: 0 auto;   /*quitar marjen y padding de default*/
-    margin: 0 auto;
- }
-
+  
+  display: none;
+}
+  padding: 0 auto;   /*quitar marjen y padding de default*/
+  margin: 0 auto;
+}
 
 /*Background*/
-
 
 
 /*Inicia sección de barra menu*/
 
 #logo {
+  
   width: 140px;
   height: 145px;
   border: solid 0 #000000af;
 }
 
 #menubackground {
+  
    height: 155px;
     border: solid 2px #000000af;
     background-color: rgba(93, 130, 165, 0.88);
@@ -50,12 +49,12 @@
     display: inline-block; /*Mostrar la barra en horizontal*/
     margin-right: 100px;   /*Espacio entre las palabras de la barra*/
 }
+
 .optionsMenu li a{
      
   text-decoration: none; /*Quitarle el subrayado a las palabras de la barra*/
   color: rgba(0, 0, 0, 0.753);
 }
-
 
 /*Termina sección de barra menu*/
 
@@ -69,4 +68,3 @@
 
 
 /*Temina sección de incio*/
-
