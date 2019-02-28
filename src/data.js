@@ -8,6 +8,7 @@ const example = () => {
 };
 
 window.example = example;
+
 //funcion en la cual entra un objeto y sale un array con los elementos del objeto
 const GenerateList = (obj)  =>{
   let Arroutput=[];
