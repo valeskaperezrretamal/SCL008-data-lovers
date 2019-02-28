@@ -1,10 +1,11 @@
-
+//variables
 
 let actualCountry;
 let actualGender;
 let actualIndicator;
 let Indicators;
 //Funciones
+
 
 // función que llena el <selec> identificado con el id indicado como parametro, con los elementos del array list
 
@@ -51,4 +52,5 @@ selectGender.addEventListener("click", ()=>{
 selectIndicators.addEventListener("click", ()=>{
     
 })
+
 
