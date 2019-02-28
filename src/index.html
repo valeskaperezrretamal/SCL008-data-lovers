@@ -1,64 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>Indicadores Latam</title>
+    <link rel="icon" type="image/png" href="Images/logo1.png"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
 
    <!-- Inicio de mi encabezado -->
-    <header id=menubackground>
+    <header id=head-bar>
       <figure id=logo>
-        <img src="Images/logo.png" alt="Logo" width=100>
-      </figure>
-      <h1>Indicadores LATAM</h1>
+        <img src="Images/logo1.png" alt="Logo">
+        <h2>Indicadores LATAM</h2>
+      </figure> 
     </header>
 
-    <!--Empieza menu principal-->
-    <nav id="menu">
-      <ul class="optionsMenu">
+
+    <!--Empieza barra de menu-->
+    <nav id="bar">
+      <ul class="options-bar">
         
-        <li> <a href="#index">Indice</a></li>
+        <li> <a href="#index">Inicio</a></li>
         <li> <a href="#definition">¿Qué es un indicador?</a></li>
         <li> <a href="#indicators">Indicadores</a></li>
 
       </ul>
     </nav>
 
-   
-
-
+   <!--Empieza el body-->
     <main>
       
-      <section id= "index">
+      <section id="index">
         <h3>Inicio</h3>
+        <article class="index-text">
         <p>
           Si en tus planes esta mudarte dentro de Latino América, ya sea por que te surgio la oportunidad, porque eres de espiritu aventurero o por una necesidad especifica,  
           indicadores LATAM te ayuda  a tomar una decisión mas informada  en tu proceso de migración . 
           Aqui encontraras información economica, social y demografica relevante sobre Brasil, México, Chile y Peru.
        </p>
-       <figure id=firstimage>
-          <img src="Images/thinking.png" alt="thinking">
-        </figure>
-       
+       </article>
+
+       <figure id=introduction-image>
+         <img src="Images/thinking.png" alt="thinking" style="max-width: 100%">
+       </figure>
       </section>
       
-      <section id= "definition">
+        <section id="definiton">
         <h3>¿Qué es un indicador?</h3>
+        <article class="whatis-text">
         <p>
           Los indicadores son datos estadisticos que nos permiten entender como estuvo, está o puede estar la economía, demografía o diferentes fenómenos sociales de un país .
           Informarte sobre los indicadores del país a donde vas te ayudará a tener una mejor perspectiva y conocimiento de este.
         </p>
-        <figure id=firstimage>
+        </article>
+      
+        <figure id=whatis-image>
             <img src="Images/comparing.PNG" alt="comparing">
         </figure>
+       
+        </section>
 
-
-           
-      </section>
-      <select id= "selectCountry" >
+        <section id="indicators">
+        <h3>Indicadores</h3>
+        
+        <select id= "selectCountry" >
           <option value="BRA">Brasil</option>
           <option value="CHL">Chile</option>
           <option value="MEX">Mexico</option>
@@ -79,12 +86,14 @@
         <select id="selectIndicators" size=15 >
           </select>
          
-            
+        </section>
 
     </main>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
