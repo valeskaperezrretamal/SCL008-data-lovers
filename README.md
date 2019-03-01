@@ -1,30 +1,40 @@
-# Data Lovers
+# Indicadores LATAM
 
 ## Índice
 
-* [Preámbulo](#preámbulo)
-* [Descripción](#resumen-del-proyecto)
-* [Consideraciones generales](#consideraciones-generales)
-* [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-* [Parte obligatoria](#parte-obligatoria)
-* [Parte opcional](#parte-opcional-hacker-edition)
-* [Consideraciones técnicas](#consideraciones-técnicas)
-* [Primeros pasos](#primeros-pasos)
-* [Contenido de referencia](#contenido-de-referencia)
-* [Checklist](#checklist)
+* [Contexto](#contexto)
+* [Que es indicadores LATAM](#que-es-indicadores-latam)
+* [Para quien esta dirigida](#para-quien-esta-dirigida)
+* [Objetivos de la pagina](#objetivos-de-la-pagina)
+* [Creación](#creacion)
+* [Historias de usuarios](#historias-de-usuarios)
+* [Conclusiones](#contenido-de-referencia)
+
 
 ***
 
-## Preámbulo
+## Contexto
 
-Según un [estudio de IBM](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=WRL12345USEN),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 trillones de bytes de datos, una cifra sin precedentes.
+La [migración](https://es.wikipedia.org/wiki/Migraci%C3%B3n) es entendida como la movilidad en el mundo.
+Es un desplazamiento de la población que se prodeuce desde un lugar de origen a otros destinos y lleva consigo un cambio de residencia habitual.
+ 
+ La movilidad de personas dentro y fuera de su tierra de origene, siempre se ha dado dentro de la historia humana, lo que si ha cambiado es el aumento de migrantes a traves del mundo, esto se puede deber a varios factores, uno de los principales es el tener que hacerlo por problemas economicos en su lugar de origen.
+ 
+ También con el transcurso del tiempo y el avance en tecnologia el transportarse a distintos lugares se ha facilitado, por un lado en cuanto al tiempo de estos y cada vez estan siendo más accesibles a más población desde un punto de vista economico. Lo cual facilita la migración es la rapidez de viajar a otros lugares y el acceso a esto.
+ Existen varios factores más y cada persona tiene un argumento para esto.
+ 
+ ## ¿Qué es indicadores LATAM?
+  
+  Indicadores LATAM es una plataforma para buscar indicadores socio-economicos y demograficos de los paises: Perú, Brasil, Mexico, Chile. 
+   En la cual podras buscar el indice que tu quieras dentro de los que te presentemos, también te facilita esta busqueda, ya que te permite filtrar os indicadores, por ejemplo por sexo, porque sabemos que necesitaras datos especificos para saber por ejemplo como se encuentra la situación laboral femenina es ese pais especifico.
 
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
+   ## Objetivos de la página
+
+   
+
+   
+
+
 
 En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
 izquierda se puede construir una interfaz amigable y entendible por el usuario.
