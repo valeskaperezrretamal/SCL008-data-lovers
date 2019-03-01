@@ -93,4 +93,41 @@ selectIndicators.addEventListener("click", ()=>{
     fillTable(actualIndicatorData);
 })
 
+//Funcion de inicio
+const start=()=> {
+
+    document.getElementById("index").style.display="block";
+    document.getElementById("definition").style.display="block";
+    document.getElementById("indicators").style.display="none";
+  }
+
+
+//Funcion para llamar al div de indicadores 
+const enterIndicators=()=> {
+
+    document.getElementById("index").style.display="none";
+    document.getElementById("definition").style.display="none";
+    document.getElementById("indicators").style.display="block";
+  }
+
+//Funcion para llamar al div de incio y definición
+const enterInitialPage=()=> {
+
+    document.getElementById("index").style.display="block";
+    document.getElementById("definition").style.display="block";
+    document.getElementById("indicators").style.display="none";
+  }  
+  
+
+
+
+
+
+  window.onload= start
+  
+
+
+
+
+
 

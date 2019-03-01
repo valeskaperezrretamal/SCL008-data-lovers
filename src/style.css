@@ -3,68 +3,117 @@
 #selectIndicators{
   
   display: none;
-}
   padding: 0 auto;   /*quitar marjen y padding de default*/
   margin: 0 auto;
 }
 
-/*Background*/
 
-
-/*Inicia sección de barra menu*/
-
-#logo {
-  
-  width: 140px;
-  height: 145px;
-  border: solid 0 #000000af;
+#all-pages{
+  background-image: url(Images/map_latin_america.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 20px;
 }
 
-#menubackground {
-  
-   height: 155px;
-    border: solid 2px #000000af;
-    background-color: rgba(93, 130, 165, 0.88);
 
-}
-
-#menubackground h1 {
-
-    width: 483px;
-    height: 145px;
-    font-family: Roboto;
+/*Inicia sección de titulo y logo*/
+#logo span {  
+    text-align: center;
+    width: 500px;
+    height: 102px;
     font-size: 36px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-
+    margin-left: 120px;
+    color:  #000000af;   
 }
 
-.optionsMenu li{
-
-    list-style: none;     /*Quitarle a la lista los puntos */
-    display: inline-block; /*Mostrar la barra en horizontal*/
-    margin-right: 100px;   /*Espacio entre las palabras de la barra*/
+#logo img{
+  width: 200px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
-.optionsMenu li a{
-     
-  text-decoration: none; /*Quitarle el subrayado a las palabras de la barra*/
-  color: rgba(0, 0, 0, 0.753);
+#head-bar{ 
+  height: 200px;
+  border: solid 2px #000000af;
+  background-color: rgba(93, 130, 165, 0.88);
+}
+/*Termina sección de titulo y logo*/
+
+/*Inicia sección barra*/
+#bar{
+  border:solid #000000af;
+}
+
+.options-bar li{
+
+  list-style: none;     /*Quitarle a la lista los puntos */
+  display: inline-block; /*Mostrar la barra en horizontal*/
+  margin-right: 200px;   /*Espacio entre las palabras de la barra*/
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.options-bar li a{
+   
+text-decoration: none;       /*Quitarle el subrayado a las palabras de la barra*/
+color: rgba(0, 0, 0, 0.753);
+font-size: 16px;
 }
 
 /*Termina sección de barra menu*/
 
-/* Inicia sección de inicio*/
 
-#firstimage {
+/* Inicia sección de inicio y que es un indicador*/
 
+.index-text, .whatis-text {
+    width: 50%;
+    font-family: Roboto;
+    font-size: 18px;
+    color: #000000;
+    float: left;
+    padding-left: 20px;
 
 }
 
+.definition1 h3 {
+  padding-left: 200px; 
+  padding-top: 40px;
+}
+
+.index1 h3, .indicators1 h3{
+  padding-left: 250px; 
+  padding-top: 40px;
+}
 
 
-/*Temina sección de incio*/
+#introduction-image {
+    width: 50%; 
+    height: 170px;
+    float: left;
+    text-align: center;
+}
+
+#whatis-image {
+  width: 50%;
+  height: 154px;
+  float: left;
+  text-align: center;
+}
+
+#introduction-image img,#whatis-image img{
+  width: 300px;
+  height: 150px;
+}
+
+/*Temina sección de incio y que es un indicador*/
+
+
+/* Inicia sección de que es indicadores*/
+
+
+
+
+
+/* Termina sección de que es indicadores*/
+
+

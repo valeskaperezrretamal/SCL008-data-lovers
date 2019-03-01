@@ -1,74 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Indicadores Latam</title>
+    <link rel="icon" type="image/png" href="Images/logo1.png"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
 
    <!-- Inicio de mi encabezado -->
-    <header id=menubackground>
-      <figure id=logo>
-        <img src="Images/logo.png" alt="Logo" width=100>
-      </figure>
-      <h1>Indicadores LATAM</h1>
-    </header>
+  <header id="head-bar">
+    <figure id="logo">
+      <img src="Images/logo1.png">
+      <span>Indicadores LATAM</span> 
+    </figure>
+  </header>
 
-    <!--Empieza menu principal-->
-    <nav id="menu">
-      <ul class="optionsMenu">
+
+    <!--Empieza barra de menu-->
+    <nav id="bar">
+      <ul class="options-bar">
         
-        <li> <a href="#index">Indice</a></li>
-        <li> <a href="#definition">¿Qué es un indicador?</a></li>
-        <li> <a href="#indicators">Indicadores</a></li>
+        <li> <a href="#index" onclick="enterInitialPage()">Inicio</a></li>
+        <li> <a href="#definition" onclick="enterInitialPage()">¿Qué es un indicador?</a></li>
+        <li> <a href="#indicators" onclick="enterIndicators()">Indicadores</a></li>
 
       </ul>
     </nav>
 
-   
-
-
-    <main>
+   <!--Empieza el body-->
+    <main id="all-pages" >
       
-      <section id= "index">
+    
+
+      <section id= "index", class="index1">
         <h3>Inicio</h3>
+        <article class="index-text">
         <p>
           Si en tus planes esta mudarte dentro de Latino América, ya sea por que te surgio la oportunidad, porque eres de espiritu aventurero o por una necesidad especifica,  
           indicadores LATAM te ayuda  a tomar una decisión mas informada  en tu proceso de migración . 
           Aqui encontraras información economica, social y demografica relevante sobre Brasil, México, Chile y Peru.
        </p>
-       <figure id=firstimage>
-          <img src="Images/thinking.png" alt="thinking">
-        </figure>
-       
+       </article>
+
+       <figure id=introduction-image>
+         <img src="Images/thinking.png" alt="thinking" style="max-width: 100%">
+       </figure>
       </section>
       
-      <section id= "definition">
+        <section id="definition", class="definition1">
         <h3>¿Qué es un indicador?</h3>
+        <article class="whatis-text">
         <p>
           Los indicadores son datos estadisticos que nos permiten entender como estuvo, está o puede estar la economía, demografía o diferentes fenómenos sociales de un país .
           Informarte sobre los indicadores del país a donde vas te ayudará a tener una mejor perspectiva y conocimiento de este.
         </p>
-        <figure id=firstimage>
+        </article>
+      
+        <figure id=whatis-image>
             <img src="Images/comparing.PNG" alt="comparing">
         </figure>
+       
+        </section>
 
-
-           
-      </section>
-      <select id= "selectCountry" >
+        <section id="indicators", class="indicators1">
+        <h3>Indicadores</h3>
+        
+        <p>¿Sobré que país te quieres informar?</p>
+        <select id= "selectCountry" >
           <option value="BRA">Brasil</option>
           <option value="CHL">Chile</option>
           <option value="MEX">Mexico</option>
           <option value="PER">Perú</option>
         </select>
-        
 
-      
-       
-        <select id="selectGender">
+        <p>Elige tu género</p>
+         <select id="selectGender">
           <optgroup label="Elige el sexo" > 
             <option value="Hombre">Hombre</option>
             <option value="Mujer">Mujer</option>       
@@ -81,7 +89,7 @@
 
         <table id="tableIndicator"></table>
          
-            
+        </section>
 
     </main>
 
