@@ -10,29 +10,31 @@
   <body>
 
    <!-- Inicio de mi encabezado -->
-    <header id=head-bar>
-      <figure id=logo>
-        <img src="Images/logo1.png" alt="Logo">
-        <h2>Indicadores LATAM</h2>
-      </figure> 
-    </header>
+  <header id="head-bar">
+    <figure id="logo">
+      <img src="Images/logo1.png">
+      <span>Indicadores LATAM</span> 
+    </figure>
+  </header>
 
 
     <!--Empieza barra de menu-->
     <nav id="bar">
       <ul class="options-bar">
         
-        <li> <a href="#index">Inicio</a></li>
-        <li> <a href="#definition">¿Qué es un indicador?</a></li>
-        <li> <a href="#indicators">Indicadores</a></li>
+        <li> <a href="#index" onclick="enterInitialPage()">Inicio</a></li>
+        <li> <a href="#definition" onclick="enterInitialPage()">¿Qué es un indicador?</a></li>
+        <li> <a href="#indicators" onclick="enterIndicators()">Indicadores</a></li>
 
       </ul>
     </nav>
 
    <!--Empieza el body-->
-    <main>
+    <main id="all-pages" >
       
-      <section id="index">
+    
+
+      <section id= "index", class="index1">
         <h3>Inicio</h3>
         <article class="index-text">
         <p>
@@ -47,7 +49,7 @@
        </figure>
       </section>
       
-        <section id="definiton">
+        <section id="definition", class="definition1">
         <h3>¿Qué es un indicador?</h3>
         <article class="whatis-text">
         <p>
@@ -62,20 +64,19 @@
        
         </section>
 
-        <section id="indicators">
+        <section id="indicators", class="indicators1">
         <h3>Indicadores</h3>
         
+        <p>¿Sobré que país te quieres informar?</p>
         <select id= "selectCountry" >
           <option value="BRA">Brasil</option>
           <option value="CHL">Chile</option>
           <option value="MEX">Mexico</option>
           <option value="PER">Perú</option>
         </select>
-        
 
-      
-       
-        <select id="selectGender">
+        <p>Elige tu género</p>
+         <select id="selectGender">
           <optgroup label="Elige el sexo" > 
             <option value="Hombre">Hombre</option>
             <option value="Mujer">Mujer</option>
