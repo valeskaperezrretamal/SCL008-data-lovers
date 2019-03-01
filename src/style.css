@@ -8,33 +8,41 @@
 }
 
 
+#all-pages{
+  background-image: url(Images/map_latin_america.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 20px;
+}
+
+
 /*Inicia sección de titulo y logo*/
-
-
-#logo h2 {
-  
+#logo span {  
     text-align: center;
-    color: #000000;
-    float: right;
+    width: 500px;
+    height: 102px;
+    font-size: 36px;
+    margin-left: 120px;
+    color:  #000000af;   
 }
 
 #logo img{
-  width: 150px;
+  width: 200px;
   margin-left: 10px;
   margin-top: 10px;
 }
 
-#head-bar{
-  
+#head-bar{ 
   height: 200px;
   border: solid 2px #000000af;
   background-color: rgba(93, 130, 165, 0.88);
-
 }
-
 /*Termina sección de titulo y logo*/
 
 /*Inicia sección barra*/
+#bar{
+  border:solid #000000af;
+}
 
 .options-bar li{
 
@@ -42,12 +50,14 @@
   display: inline-block; /*Mostrar la barra en horizontal*/
   margin-right: 200px;   /*Espacio entre las palabras de la barra*/
   margin-left: 100px;
+  margin-top: 10px;
 }
 
 .options-bar li a{
    
-text-decoration: none;  /*Quitarle el subrayado a las palabras de la barra*/
+text-decoration: none;       /*Quitarle el subrayado a las palabras de la barra*/
 color: rgba(0, 0, 0, 0.753);
+font-size: 16px;
 }
 
 /*Termina sección de barra menu*/
@@ -64,6 +74,17 @@ color: rgba(0, 0, 0, 0.753);
     padding-left: 20px;
 
 }
+
+.definition1 h3 {
+  padding-left: 200px; 
+  padding-top: 40px;
+}
+
+.index1 h3, .indicators1 h3{
+  padding-left: 250px; 
+  padding-top: 40px;
+}
+
 
 #introduction-image {
     width: 50%; 
