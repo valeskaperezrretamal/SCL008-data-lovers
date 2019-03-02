@@ -1,9 +1,11 @@
-//variables
+//variables globales
 
-let actualCountry;
-let actualGender;
-let actualIndicator;
-let Indicators;
+let actualCountry;//el pais seleccionado por el usuario
+let actualGender;//sexo seleccionado por el usuario 
+let actualIndicator;//el indicador seleccionado por el usuario
+
+
+
 //Funciones
 
 
@@ -21,7 +23,8 @@ const fillList = (list,id) =>{
 const updateSelection=()=>{
     actualCountry = selectCountry.options[selectCountry.selectedIndex].value;
     actualGender = selectGender.options[selectGender.selectedIndex].value;
-    actualIndicator = selectGender.options[selectGender.selectedIndex].value;
+    try {actualIndicator = selectIndicators.options[selectIndicators.selectedIndex].value;}
+    catch {}
 }
 // Actualiza el listado de indicadores de acuerdo a la selección del usuario 
 const updateIndicators=()=>{
@@ -31,6 +34,39 @@ const updateIndicators=()=>{
     if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);}
     fillList(Indicators,"selectIndicators");
 }
+
+
+
+//genera el codigo html para llenar la tabla con la data, llena la tabla con los datos de data (año e indicador)
+const fillTable =(arr)=>{
+    let htmlCode=   "<tr>"+
+                        "<th>Año</th>"+
+                        "<th>Indicador</th>"+
+                    "</tr>";
+    arr.forEach(element => {
+        htmlCode=htmlCode+ "<tr>"+
+        "<td>"+element[0]+"</td>"
+
+        if(element[1]===""){
+        htmlCode=htmlCode+  "<td>"+"-"+"</td>"+
+            "</tr>";
+        }
+        else {
+        htmlCode=htmlCode+  "<td>"+element[1]+"</td>"+
+            "</tr>";
+        } 
+    });
+    document.getElementById("tableIndicator").innerHTML=htmlCode;      
+}
+
+//genera codigo para agregar Stats
+const fillStats=(arr)=>{
+    document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+computeMean(arr)+"</p>"+
+                                                    "<p> <strong>Mediana: </strong>"+computeMedian(arr)+"</p>"+
+                                                    "<p> <strong>Maximo: </strong>"+computeMax(arr)+"</p>"+
+                                                    "<p> <strong>Minimo: </strong>"+computeMin(arr)+"</p>"; 
+}
+
 
 //-----------------------
 // define variables para os objetos de html
@@ -50,7 +86,11 @@ selectGender.addEventListener("click", ()=>{
     document.getElementById("selectIndicators").style.display = "block";   
 })
 selectIndicators.addEventListener("click", ()=>{
-    
+    updateSelection();
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
+    fillTable(arrayData);//dibuja tabla
+    fillStats(arrayData); //agrega estadisticas
 })
 
 //Funcion de inicio

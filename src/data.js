@@ -7,6 +7,9 @@ const example = () => {
   return 'example';
 };
 
+
+
+
 window.example = example;
 window.filterForMen=filterForMen;
 
@@ -39,10 +42,76 @@ const filterForMen = (indicator) =>{
   else if(indicator.indexOf("femenino")>=0){return false;}
   else { return true;}
 }
+//convierte data tipo objeto a un array [año,valor indicador]
+const dataToArray = (data)=>{
+  let arr=[];
+  for (element in data){    
+    arr.push([element,data[element]]);
+  }
+  return arr;
+}
+//devuelve el indice del indicador
+const updateIndexIndicator=(Indicator)=>{
+  let allIndicators=GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
+  return allIndicators.indexOf(Indicator);
 
+}
 
+//devuelve la data asociada al indicador y pais como un array
+const updateIndicatorData=(country,indexIndicator)=>{
+  return dataToArray(WORLDBANK[country].indicators[indexIndicator].data);
+}
 
+// calcula promedio de arreglo de datos
+const computeMean=(arr)=>{
+  let n=0;
+  let sum=0;
+  for(i=0;i<arr.length;i++){
+    if (arr[i][1]!=""){n++;sum+=arr[i][1];}
+  }
+  return sum/n;
+}
 
+// calcula Maximo de arreglo de datos
+const computeMax=(arr)=>{
+  let aux="";
+  for(i=0;i<arr.length;i++){
+    if (arr[i][1]!=""){
+      if (aux===""){
+        aux=arr[i][1];
+      }else if(arr[i][1]>aux){
+        aux=arr[i][1];
+      }
+    }  
+  }
+  return aux;
+}
 
+// calcula Minimo de arreglo de datos
+const computeMin=(arr)=>{
+  let aux="";
+  for(i=0;i<arr.length;i++){
+    if (arr[i][1]!=""){
+      if (aux===""){
+        aux=arr[i][1];
+      }
+      else if(arr[i][1]<aux){
+        aux=arr[i][1];
+      }
+    }
+  }
+  return aux;
+}
+// calcula mediana de arreglo de datos
+const computeMedian=(arr)=>{
+  let newArr=[];
+  for(i=0;i<arr.length;i++){
+    if (arr[i][1]!=""){newArr.push(arr[i][1]);}
+  }
+  if(newArr.length%2===1){
+    return newArr[(newArr.length-1)/2];}
+  else{
+    return (newArr[newArr.length/2] + newArr[newArr.length/2])/2;}
 
+}
 
