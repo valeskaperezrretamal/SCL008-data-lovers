@@ -1,12 +1,11 @@
-//variables
+//variables globales
 
 let actualCountry;//el pais seleccionado por el usuario
 let actualGender;//sexo seleccionado por el usuario 
 let actualIndicator;//el indicador seleccionado por el usuario
-let actualIndexIndicator;//para guardar el indice correspondiente al indicador seleccionado
-let actualIndicatorData;// Data del indicador que seleccionó el usuario
-let Indicators; //para llenar el <select> de indicadores, se filtra y ordena
-let allIndicators;//es el listado de indicadores puro sin filtrar ni ordenar
+
+
+
 //Funciones
 
 
@@ -35,37 +34,37 @@ const updateIndicators=()=>{
     if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);}
     fillList(Indicators,"selectIndicators");
 }
-//actualiza el valor del indice del indicador de acuerdo al indicador seleccionado por el usuario
-const updateIndexIndicator=()=>{
-    allIndicators=GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
-    actualIndexIndicator=allIndicators.indexOf(actualIndicator);
-}
-//actualiza la data de acuerdo al indice seleccionado por el usauario
-const updateIndicatorData=()=>{
-    actualIndicatorData=WORLDBANK[actualCountry].indicators[actualIndexIndicator].data;
-}
+
+
+
 //genera el codigo html para llenar la tabla con la data, llena la tabla con los datos de data (año e indicador)
-const fillTable =(data)=>{
+const fillTable =(arr)=>{
     let htmlCode=   "<tr>"+
                         "<th>Año</th>"+
                         "<th>Indicador</th>"+
                     "</tr>";
-    for (element in data){
+    arr.forEach(element => {
         htmlCode=htmlCode+ "<tr>"+
-                                "<td>"+element+"</td>"
+        "<td>"+element[0]+"</td>"
 
-        if(data[element]===""){
-            htmlCode=htmlCode+  "<td>"+"-"+"</td>"+
-                            "</tr>";
+        if(element[1]===""){
+        htmlCode=htmlCode+  "<td>"+"-"+"</td>"+
+            "</tr>";
         }
         else {
-            htmlCode=htmlCode+  "<td>"+data[element]+"</td>"+
-                            "</tr>";
-        }
-        
-
-    }
+        htmlCode=htmlCode+  "<td>"+element[1]+"</td>"+
+            "</tr>";
+        } 
+    });
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
+}
+
+//genera codigo para agregar Stats
+const fillStats=(arr)=>{
+    document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+computeMean(arr)+"</p>"+
+                                                    "<p> <strong>Mediana: </strong>"+computeMedian(arr)+"</p>"+
+                                                    "<p> <strong>Maximo: </strong>"+computeMax(arr)+"</p>"+
+                                                    "<p> <strong>Minimo: </strong>"+computeMin(arr)+"</p>"; 
 }
 
 
@@ -88,9 +87,10 @@ selectGender.addEventListener("click", ()=>{
 })
 selectIndicators.addEventListener("click", ()=>{
     updateSelection();
-    updateIndexIndicator();
-    updateIndicatorData();
-    fillTable(actualIndicatorData);
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
+    fillTable(arrayData);//dibuja tabla
+    fillStats(arrayData); //agrega estadisticas
 })
 
 //Funcion de inicio
