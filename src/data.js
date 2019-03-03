@@ -7,11 +7,8 @@ const example = () => {
   return 'example';
 };
 
-
-
-
 window.example = example;
-window.filterForMen=filterForMen;
+
 
 //funcion en la cual entra un objeto y sale un array con los elementos del objeto
 const GenerateList = (obj)  =>{
@@ -21,16 +18,17 @@ const GenerateList = (obj)  =>{
   }
   return Arroutput;
 };
+
 //funcion en la cual entra un objeto y una propiedad de ese objeto o elemento y devueve un array con los valores de la propiedad para cada elemento del objeto
 const GenerateSubList = (obj,subprop)  =>{
   let Arroutput=[];
   for (prop in obj){
-    Arroutput.push(obj[prop][subprop]);
-    
+    Arroutput.push(obj[prop][subprop]);    
   };
   return Arroutput;
-  
 };
+
+
 //funcion para filtrar indicadores para mujeres, esta se crea para poder ser usada en el metodo filter
 const filterForWomen = (indicator) => {
   return !(indicator.indexOf("varones")>=0 && indicator.indexOf("mujeres")<=0 );
