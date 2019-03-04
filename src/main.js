@@ -9,7 +9,7 @@ const selectCountry=document.getElementById("selectCountry");
 const selectGender=document.getElementById("selectGender");
 const selectIndicators=document.getElementById("selectIndicators"); 
 
-
+// Función que llena el <selec> identificado con el id indicado como parametro, con los elementos del array list
 //Crea la lista desplegable de indicadores
 const fillList = (list,id) =>{
     let htmlcodes="";
@@ -39,12 +39,11 @@ const updateIndicators=()=>{
 }
 
 //Conecta el botón "siguiente" para que muestre la lista de indicadores filtrada
-const showlist=()=> {
-    updateSelection();//actualiza las variables que guarda la selección del usuario
+const showlist=document.getElementById("next-button").addEventListener("click", ()=> {    updateSelection();//actualiza las variables que guarda la selección del usuario
     updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
     document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores    
     document.getElementById("showDataScreen").style.display="block";
-}  
+}) 
 //Lo de abajo no es necesario porque el botón ya esta llamando a esas funciones
 //selectCountry.addEventListener("click", ()=>{
 //    updateSelection();//actualiza las variables que guarda la selección del usuario
@@ -80,8 +79,7 @@ const fillTable =(arr)=>{
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
 //Conecta el botón "ver indicador" para que muestre la tabla de los indicadores, esconde las primeras pantallas 
-const showIndicatorValue=()=> {
-    updateSelection();//actualiza las variables que guarda la selección del usuario
+const showIndicatorValue=document.getElementById("indicator-button").addEventListener("click", ()=> {    updateSelection();//actualiza las variables que guarda la selección del usuario
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillTable(arrayData);//dibuja tabla
@@ -90,7 +88,7 @@ const showIndicatorValue=()=> {
     document.getElementById("index").style.display="none";
     document.getElementById("definition").style.display="none";
     document.getElementById("indicators").style.display="none";
-}
+})
 //Lo de abajo ya no es necesario  
 //selectIndicators.addEventListener("click", ()=>{
 //    updateSelection();
@@ -101,7 +99,7 @@ const showIndicatorValue=()=> {
 //})
 
 //Conecta el botón "promedio" y muestra el valor, esconde las primeras pantallas 
-const showStats=()=> {
+const showStats=document.getElementById("average-button").addEventListener("click", ()=> {
     updateSelection();//actualiza las variables que guarda la selección del usuario
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
@@ -111,7 +109,7 @@ const showStats=()=> {
     document.getElementById("index").style.display="none";
     document.getElementById("definition").style.display="none";
     document.getElementById("indicators").style.display="none";
-}
+})
 
 //Genera codigo para agregar Stats
 const fillStats=(arr)=>{
@@ -133,13 +131,13 @@ const enterInitialPage=()=> {
   }  
 
   //Llama al div de indicadores y ocultar el de inicio y definición
-const enterIndicators=()=> {
+const enterIndicators=document.getElementById("indicators-pages").addEventListener("click", () =>{
     document.getElementById("index").style.display="none";
     document.getElementById("definition").style.display="none";
     document.getElementById("indicators").style.display="block";
     document.getElementById("showDataScreen").style.display="none";
    
-  }
+  })
 
 
 
