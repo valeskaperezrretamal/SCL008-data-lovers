@@ -28,6 +28,7 @@ const updateSelection=()=>{
     catch {}
 }
 
+// Actualiza el listado de indicadores de acuerdo a la selección del usuario 
 // Actualiza el listado de indicadores de acuerdo a la selección de país y genero 
 const updateIndicators=()=>{
     Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
@@ -37,7 +38,7 @@ const updateIndicators=()=>{
     fillList(Indicators,"selectIndicators");
 }
 
-//Conecta el botón "siguiente" para que muestre la lista de indicadores filtrada 
+//Conecta el botón "siguiente" para que muestre la lista de indicadores filtrada
 const showlist=()=> {
     updateSelection();//actualiza las variables que guarda la selección del usuario
     updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
@@ -78,7 +79,7 @@ const fillTable =(arr)=>{
     });
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
-
+//Conecta el botón "ver indicador" para que muestre la tabla de los indicadores, esconde las primeras pantallas 
 const showIndicatorValue=()=> {
     updateSelection();//actualiza las variables que guarda la selección del usuario
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
@@ -99,6 +100,7 @@ const showIndicatorValue=()=> {
   //  fillStats(arrayData); //agrega estadisticas
 //})
 
+//Conecta el botón "promedio" y muestra el valor, esconde las primeras pantallas 
 const showStats=()=> {
     updateSelection();//actualiza las variables que guarda la selección del usuario
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
