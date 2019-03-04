@@ -22,9 +22,9 @@
     <nav id="bar">
       <ul class="options-bar">
         
-        <li> <a href="#index" onclick="enterInitialPage()">Inicio</a></li>
-        <li> <a href="#definition" onclick="enterInitialPage()">¿Qué es un indicador?</a></li>
-        <li> <a href="#indicators" onclick="enterIndicators()">Indicadores</a></li>
+        <li> <a href="#index">Inicio</a></li>
+        <li> <a href="#definition">¿Qué es un indicador?</a></li>
+        <li> <a href="#indicators" id="indicators-pages">Indicadores</a></li>
 
       </ul>
     </nav>
@@ -71,7 +71,7 @@
             <select id="selectIndicators" size="15"></select>
         </section>
     <!--Botón para ver el valor de los indices del indicador-->
-        <button type="button" id="indicator-button" class="btn btn-outline-dark" onclick="showIndicatorValue()">Ver Indicador</button>
+        <button type="button" id="indicator-button" class="btn btn-outline-dark">Ver Indicador</button>
       </article>
     <!--Sección correspondiente a selectores de País y Género--> 
         <article= id="selectionScreen">
@@ -94,13 +94,13 @@
         </select>
         </section>
     <!--Botón para mostrar lista de indicadores-->
-      <button type="button" id="next-button" class="btn btn-outline-dark" onclick="showlist()">Siguiente</button>
+      <button type="button" id="next-button" class="btn btn-outline-dark">Siguiente</button>
        </article> 
       <!--Empieza segundo artículo de indices-->
      <article id="tableScreen">
         <!--Sección donde se imprime el valor historico del indicador seleccionado-->
         <div id=idStats>
-        <button type="button" class="btn btn-outline-dark" onclick="showStats()">Promedio</button>
+        <button type="button" id="average-button" class="btn btn-outline-dark">Promedio</button>
         <!--<button type="button" class="btn btn-outline-dark">Mediana</button>
         <button type="button" class="btn btn-outline-dark">Maximo</button>
         <button type="button" class="btn btn-outline-dark">Minimo</button>--> 
