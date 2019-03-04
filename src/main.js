@@ -4,6 +4,11 @@ let actualCountry;//el pais seleccionado por el usuario
 let actualGender;//sexo seleccionado por el usuario 
 let actualIndicator;//el indicador seleccionado por el usuario
 
+// define variables para los objetos de html
+const selectCountry=document.getElementById("selectCountry");
+const selectGender=document.getElementById("selectGender");
+const selectIndicators=document.getElementById("selectIndicators"); 
+
 
 //Crea la lista desplegable de indicadores
 const fillList = (list,id) =>{
@@ -13,7 +18,8 @@ const fillList = (list,id) =>{
     })
     document.getElementById(id).innerHTML = htmlcodes;
     }
-
+    
+   
 //Actualiza los valores que el usuario seleccionó
 const updateSelection=()=>{
     actualCountry = selectCountry.options[selectCountry.selectedIndex].value;
@@ -36,15 +42,22 @@ const showlist=()=> {
     updateSelection();//actualiza las variables que guarda la selección del usuario
     updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
     document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores    
+    document.getElementById("showDataScreen").style.display="block";
 }  
+//Lo de abajo no es necesario porque el botón ya esta llamando a esas funciones
+//selectCountry.addEventListener("click", ()=>{
+//    updateSelection();//actualiza las variables que guarda la selección del usuario
+//    updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
+//    document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores
+//})
+//lo mismo de country pero con la selección de genero
+//selectGender.addEventListener("click", ()=>{
+//    updateSelection();
+//    updateIndicators();
+//    document.getElementById("selectIndicators").style.display = "block";   
+//})
 
-
-
-//aqui
-
-
-
-//genera el codigo html para llenar la tabla con la data, llena la tabla con los datos de data (año e indicador)
+//Genera el codigo html para llenar la tabla con la data, llena la tabla con los datos de data (año e indicador)
 const fillTable =(arr)=>{
     let htmlCode=   "<tr>"+
                         "<th>Año</th>"+
@@ -66,39 +79,18 @@ const fillTable =(arr)=>{
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
 
-//genera codigo para agregar Stats
-//const fillStats=(arr)=>{
-  //  document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+computeMean(arr)+"</p>"+
-    //                                                "<p> <strong>Mediana: </strong>"+computeMedian(arr)+"</p>"+
-      //                                              "<p> <strong>Maximo: </strong>"+computeMax(arr)+"</p>"+
-        //                                            "<p> <strong>Minimo: </strong>"+computeMin(arr)+"</p>"; 
-//}
-
-
-//-----------------------
-// define variables para os objetos de html
-const selectCountry=document.getElementById("selectCountry");
-const selectGender=document.getElementById("selectGender");
-const selectIndicators=document.getElementById("selectIndicators");
-//const indicator-button=document.getElementById("indicator-button");
-//Botón para avanzar una vez seleccionado País y Género
-//indicator-button.addEventListener("click", ()=>{
-  //  updateSelection();//actualiza las variables que guarda la selección del usuario
-    //updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
-    //document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores
-//})
-
-//selectCountry.addEventListener("click", ()=>{
-//    updateSelection();//actualiza las variables que guarda la selección del usuario
-//    updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
-//    document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores
-//})
-//lo mismo de country pero con la selección de genero
-//selectGender.addEventListener("click", ()=>{
-//    updateSelection();
-//    updateIndicators();
-//    document.getElementById("selectIndicators").style.display = "block";   
-//})
+const showIndicatorValue=()=> {
+    updateSelection();//actualiza las variables que guarda la selección del usuario
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
+    fillTable(arrayData);//dibuja tabla
+    document.getElementById("tableIndicator").style.display = "block"; // hace visible el select de indicadores    
+    document.getElementById("tableScreen").style.display="block"
+    document.getElementById("index").style.display="none";
+    document.getElementById("definition").style.display="none";
+    document.getElementById("indicators").style.display="none";
+}
+//Lo de abajo ya no es necesario  
 //selectIndicators.addEventListener("click", ()=>{
 //    updateSelection();
   //  let actualIndexIndicator=updateIndexIndicator(actualIndicator);
@@ -107,12 +99,35 @@ const selectIndicators=document.getElementById("selectIndicators");
   //  fillStats(arrayData); //agrega estadisticas
 //})
 
+const showStats=()=> {
+    updateSelection();//actualiza las variables que guarda la selección del usuario
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
+    fillStats(arrayData);//dibuja tabla
+    document.getElementById("showDataScreen").style.display="block" // hace visible el select de indicadores    
+    document.getElementById("tableScreen").style.display="block"
+    document.getElementById("index").style.display="none";
+    document.getElementById("definition").style.display="none";
+    document.getElementById("indicators").style.display="none";
+}
+
+//Genera codigo para agregar Stats
+const fillStats=(arr)=>{
+  document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+computeMean(arr)+"</p>"
+ }
+  //+
+    //                                                "<p> <strong>Mediana: </strong>"+computeMedian(arr)+"</p>"+
+      //                                              "<p> <strong>Maximo: </strong>"+computeMax(arr)+"</p>"+
+        //                                            "<p> <strong>Minimo: </strong>"+computeMin(arr)+"</p>"; 
+//
+
 //Empieza manejo de visualizar y ocultar pantallas
 //Llama al div de incio y definición y ocultar el de indicadores
 const enterInitialPage=()=> {
     document.getElementById("index").style.display="block";
     document.getElementById("definition").style.display="block";
     document.getElementById("indicators").style.display="none";
+    document.getElementById("tableScreen").style.display="none";
   }  
 
   //Llama al div de indicadores y ocultar el de inicio y definición
@@ -120,7 +135,10 @@ const enterIndicators=()=> {
     document.getElementById("index").style.display="none";
     document.getElementById("definition").style.display="none";
     document.getElementById("indicators").style.display="block";
+    document.getElementById("showDataScreen").style.display="none";
+   
   }
+
 
 
 
