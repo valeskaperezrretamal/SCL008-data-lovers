@@ -64,14 +64,17 @@
      <!--Empieza primer articulo de indices-->     
   <article id="indicators", class="indicators1">
         <h3>Indicadores</h3>
+      <article id="showDataScreen">
         <span id=derecha>Selecciona el indicador de tu interés:</span>    
     <!--Sección que mostrará la lista de indicadores-->    
         <section>
             <select id="selectIndicators" size="15"></select>
         </section>
     <!--Botón para ver el valor de los indices del indicador-->
-    <button type="button" id="indicator-button" class="btn btn-outline-dark">Ver Indicador</button>
-    <!--Sección correspondiente a selectores de País y Género-->    
+        <button type="button" id="indicator-button" class="btn btn-outline-dark" onclick="showIndicatorValue()">Ver Indicador</button>
+      </article>
+    <!--Sección correspondiente a selectores de País y Género--> 
+        <article= id="selectionScreen">
         <section class="country-selection">
          <p>Selecciona el país de tu interés:</p>
   
@@ -92,27 +95,26 @@
         </section>
     <!--Botón para mostrar lista de indicadores-->
       <button type="button" id="next-button" class="btn btn-outline-dark" onclick="showlist()">Siguiente</button>
-   </article>
-
-    <!--Empieza segundo artículo de indices-->
-    <article>
-      <!--Sección donde se imprime el valor historico del indicador seleccionado-->
-      <section>
-        <table id="tableIndicator"></table>
-      </section>
+       </article> 
+      <!--Empieza segundo artículo de indices-->
+     <article id="tableScreen">
+        <!--Sección donde se imprime el valor historico del indicador seleccionado-->
+        <div id=idStats>
+        <button type="button" class="btn btn-outline-dark" onclick="showStats()">Promedio</button>
+        <!--<button type="button" class="btn btn-outline-dark">Mediana</button>
+        <button type="button" class="btn btn-outline-dark">Maximo</button>
+        <button type="button" class="btn btn-outline-dark">Minimo</button>--> 
+        </div>
+        <section class="showTable"> 
+          <table id="tableIndicator"></table>
+        </section>
+        
+        
+      </article>    
     </article>
 
-        
-
-    <article>
-
-        <div id=idStats></div>
-        <button type="button" class="btn btn-outline-dark">Promedio</button>
-        <button type="button" class="btn btn-outline-dark">Mediana</button>
-        <button type="button" class="btn btn-outline-dark">Maximo</button>
-        <button type="button" class="btn btn-outline-dark">Minimo</button>           
     
-    </article>    
+    
 
 </main>
 
