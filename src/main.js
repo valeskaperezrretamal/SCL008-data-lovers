@@ -3,6 +3,7 @@
 let actualCountry;//el pais seleccionado por el usuario
 let actualGender;//sexo seleccionado por el usuario 
 let actualIndicator;//el indicador seleccionado por el usuario
+let Indicators;
 
 // define variables para los objetos de html
 const selectCountry=document.getElementById("selectCountry");
@@ -78,6 +79,16 @@ const fillTable =(arr)=>{
     });
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
+
+//Conecta el botón A-Z para que ordene
+const orderIndicator=document.getElementById("order-button").addEventListener("click",()=> {
+     
+    organizedIndicators=orderData(Indicators);
+    selectIndicators.innerHTML="";
+
+    fillList(organizedIndicators,"selectIndicators")
+    })
+
 //Conecta el botón "ver indicador" para que muestre la tabla de los indicadores, esconde las primeras pantallas 
 const showIndicatorValue=document.getElementById("indicator-button").addEventListener("click", ()=> {    updateSelection();//actualiza las variables que guarda la selección del usuario
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
@@ -128,10 +139,25 @@ const enterInitialPage=()=> {
     document.getElementById("definition").style.display="block";
     document.getElementById("indicators").style.display="none";
     document.getElementById("tableScreen").style.display="none";
-  }  
-
+  }
+  
+ //Regresa a pantalla de incio 
+  const returnToInitialPage=document.getElementById("welcome-page1").addEventListener("click",()=> {
+    document.getElementById("index").style.display="block";
+    document.getElementById("definition").style.display="block";
+    document.getElementById("indicators").style.display="none";
+    document.getElementById("tableScreen").style.display="none";
+  })
+ 
+  //Regresar a segunda pantalla
+  const returnToSecondPage=document.getElementById("welcome-page2").addEventListener("click",()=> {
+    document.getElementById("index").style.display="block";
+    document.getElementById("definition").style.display="block";
+    document.getElementById("indicators").style.display="none";
+    document.getElementById("tableScreen").style.display="none";
+  }) 
   //Llama al div de indicadores y ocultar el de inicio y definición
-const enterIndicators=document.getElementById("indicators-pages").addEventListener("click", () =>{
+  const enterIndicators=document.getElementById("indicators-pages").addEventListener("click", () =>{
     document.getElementById("index").style.display="none";
     document.getElementById("definition").style.display="none";
     document.getElementById("indicators").style.display="block";
