@@ -55,6 +55,19 @@ const updateIndexIndicator=(Indicator)=>{
 
 }
 
+//Ordena de Z a A
+const orderData = (Indicators) => {
+  let orderedArray = Indicators
+  orderedArray.sort((a,z) => {
+
+    return z.localeCompare(a)
+  }
+  
+  )
+return orderedArray
+}
+
+
 //devuelve la data asociada al indicador y pais como un array
 const updateIndicatorData=(country,indexIndicator)=>{
   return dataToArray(WORLDBANK[country].indicators[indexIndicator].data);
