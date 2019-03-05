@@ -7,7 +7,14 @@ let actualIndicator;//el indicador seleccionado por el usuario
 // define variables para los objetos de html
 const selectCountry=document.getElementById("selectCountry");
 const selectGender=document.getElementById("selectGender");
-const selectIndicators=document.getElementById("selectIndicators"); 
+const selectIndicators=document.getElementById("selectIndicators");
+const btOrderListAsc =document.getElementById("btOrderListAsc");
+const btOrderListDesc =document.getElementById("btOrderListDesc");
+
+
+//// funciones
+
+
 
 // Función que llena el <selec> identificado con el id indicado como parametro, con los elementos del array list
 //Crea la lista desplegable de indicadores
@@ -37,26 +44,6 @@ const updateIndicators=()=>{
     if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);}
     fillList(Indicators,"selectIndicators");
 }
-
-//Conecta el botón "siguiente" para que muestre la lista de indicadores filtrada
-const showlist=document.getElementById("next-button").addEventListener("click", ()=> {    updateSelection();//actualiza las variables que guarda la selección del usuario
-    updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
-    document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores    
-    document.getElementById("showDataScreen").style.display="block";
-}) 
-//Lo de abajo no es necesario porque el botón ya esta llamando a esas funciones
-//selectCountry.addEventListener("click", ()=>{
-//    updateSelection();//actualiza las variables que guarda la selección del usuario
-//    updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
-//    document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores
-//})
-//lo mismo de country pero con la selección de genero
-//selectGender.addEventListener("click", ()=>{
-//    updateSelection();
-//    updateIndicators();
-//    document.getElementById("selectIndicators").style.display = "block";   
-//})
-
 //Genera el codigo html para llenar la tabla con la data, llena la tabla con los datos de data (año e indicador)
 const fillTable =(arr)=>{
     let htmlCode=   "<tr>"+
@@ -78,8 +65,49 @@ const fillTable =(arr)=>{
     });
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
+
+//addeventlisteners
+
+//funcionalidad a ordenar listado de indicadores
+btOrderListDesc.addEventListener("click", ()=>{
+    Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
+    Indicators=sortData(Indicators, 0, "desc");
+    if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
+    if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);}
+    fillList(Indicators,"selectIndicators");
+})
+btOrderListAsc.addEventListener("click", ()=>{
+    Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
+    Indicators=sortData(Indicators, 0, "asc");
+    if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
+    if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);}
+    fillList(Indicators,"selectIndicators");
+})
+
+//Conecta el botón "siguiente" para que muestre la lista de indicadores filtrada
+const showlist=document.getElementById("next-button").addEventListener("click", ()=> {   
+     updateSelection();//actualiza las variables que guarda la selección del usuario
+    updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
+    document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores    
+    document.getElementById("showDataScreen").style.display="block";
+}) 
+//Lo de abajo no es necesario porque el botón ya esta llamando a esas funciones
+//selectCountry.addEventListener("click", ()=>{
+//    updateSelection();//actualiza las variables que guarda la selección del usuario
+//    updateIndicators(); //actualiza el listado de indicadores de la etiqueta selec a partir de las variables que guardan la selección del usuario
+//    document.getElementById("selectIndicators").style.display = "block"; // hace visible el select de indicadores
+//})
+//lo mismo de country pero con la selección de genero
+//selectGender.addEventListener("click", ()=>{
+//    updateSelection();
+//    updateIndicators();
+//    document.getElementById("selectIndicators").style.display = "block";   
+//})
+
+
 //Conecta el botón "ver indicador" para que muestre la tabla de los indicadores, esconde las primeras pantallas 
-const showIndicatorValue=document.getElementById("indicator-button").addEventListener("click", ()=> {    updateSelection();//actualiza las variables que guarda la selección del usuario
+const showIndicatorValue=document.getElementById("indicator-button").addEventListener("click", ()=> {    
+    updateSelection();//actualiza las variables que guarda la selección del usuario
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillTable(arrayData);//dibuja tabla
