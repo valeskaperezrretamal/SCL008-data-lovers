@@ -18,6 +18,7 @@ const GenerateList = (obj)  =>{
   }
   return Arroutput;
 };
+window.GenerateList=GenerateList;
 
 //funcion en la cual entra un objeto y una propiedad de ese objeto o elemento y devueve un array con los valores de la propiedad para cada elemento del objeto
 const GenerateSubList = (obj,subprop)  =>{
@@ -27,12 +28,14 @@ const GenerateSubList = (obj,subprop)  =>{
   };
   return Arroutput;
 };
-
+window.GenerateSubList=GenerateSubList;
 
 //funcion para filtrar indicadores para mujeres, esta se crea para poder ser usada en el metodo filter
 const filterForWomen = (indicator) => {
   return !(indicator.indexOf("varones")>=0 && indicator.indexOf("mujeres")<=0 );
 }
+window.filterForWomen=filterForWomen;
+
 //funcion para filtrar indicadores para hombres
 const filterForMen = (indicator) =>{
   if (indicator.indexOf("mujeres")>=0 && indicator.indexOf("varones")<=0 ){return false;}
@@ -40,6 +43,8 @@ const filterForMen = (indicator) =>{
   else if(indicator.indexOf("femenino")>=0){return false;}
   else { return true;}
 }
+window.filterForMen=filterForMen;
+
 //convierte data tipo objeto a un array [año,valor indicador]
 const dataToArray = (data)=>{
   let arr=[];
@@ -48,17 +53,21 @@ const dataToArray = (data)=>{
   }
   return arr;
 }
+window.dataToArray=dataToArray;
+
 //devuelve el indice del indicador
 const updateIndexIndicator=(Indicator)=>{
   let allIndicators=GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
   return allIndicators.indexOf(Indicator);
 
 }
+window.updateIndexIndicator=updateIndexIndicator;
 
 //devuelve la data asociada al indicador y pais como un array
 const updateIndicatorData=(country,indexIndicator)=>{
   return dataToArray(WORLDBANK[country].indicators[indexIndicator].data);
 }
+window.updateIndicatorData=updateIndicatorData;
 
 // calcula promedio de arreglo de datos
 const computeMean=(arr)=>{
@@ -69,6 +78,7 @@ const computeMean=(arr)=>{
   }
   return sum/n;
 }
+window.computeMean=computeMean;
 
 // calcula Maximo de arreglo de datos
 const computeMax=(arr)=>{
@@ -84,6 +94,7 @@ const computeMax=(arr)=>{
   }
   return aux;
 }
+window.computeMax=computeMax;
 
 // calcula Minimo de arreglo de datos
 const computeMin=(arr)=>{
@@ -100,16 +111,36 @@ const computeMin=(arr)=>{
   }
   return aux;
 }
+window.computeMin=computeMin;
+
 // calcula mediana de arreglo de datos
 const computeMedian=(arr)=>{
   let newArr=[];
   for(i=0;i<arr.length;i++){
     if (arr[i][1]!=""){newArr.push(arr[i][1]);}
   }
+  newArr.sort()
   if(newArr.length%2===1){
     return newArr[(newArr.length-1)/2];}
   else{
     return (newArr[newArr.length/2] + newArr[newArr.length/2])/2;}
 
+}
+window.computeMedian=computeMedian;
+//data:array
+//sortBy: number of column
+//sortOrder: "asc" or "desc"
+const sortData=(Data, sortBy, sortOrder)=>{
+  arrData=Data.slice(0);
+  //define funcion de comparacion para sort
+  const compare=(a,b)=>{
+    if (a[sortBy]>=b[sortBy]){return 1;} else {-1;}
+  }
+  arrData.sort(compare);
+  if (sortOrder==="asc"){return arrData;
+  }else if ("desc"){
+    return arrData.reverse();
+  }
+ 
 }
 
