@@ -15,7 +15,7 @@ describe('', () => {
     });
     //se prueb una función con un array
     it('ingresa este array [[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]] debe retornar 58.5', () => {
-      assert.equal(computeMean([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 58.5);
+      assert.equal(window.computeMean([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 58.5);
     });
   });
 
@@ -28,7 +28,7 @@ describe('', () => {
   });
   //se prueb una función con un array
   it('ingresa este array [[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]] debe retornar 98', () => {
-    assert.equal(computeMax([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 98);
+    assert.equal(window.computeMax([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 98);
   });
 });
 
@@ -41,7 +41,7 @@ it('debería ser una función',() => {
 });
 //se prueb una función con un array
 it('ingresa este array [[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]] debe retornar 21', () => {
-  assert.equal(computeMin([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 21);
+  assert.equal(window.computeMin([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 21);
 });
 });
 
@@ -54,7 +54,7 @@ it('debería ser una función',() => {
 });
 //se prueb una función con un array
 it('ingresa este array [[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]] debe retornar 57.5', () => {
-  assert.equal(computeMedian([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 57.5);
+  assert.equal(window.computeMedian([[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,""]]), 57.5);
 });
 });
 

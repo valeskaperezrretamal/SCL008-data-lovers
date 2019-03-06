@@ -1,6 +1,7 @@
 # Indicadores LATAM
 
-## Índice
+## índice
+![Logo1](logo1.png)
 
 * [Contexto](#contexto)
 * [Que es indicadores LATAM](#que-es-indicadores-latam)
@@ -29,6 +30,7 @@ Es un desplazamiento de la población que se prodeuce desde un lugar de origen a
    En la cual podras buscar el indice que tu quieras dentro de los que te presentemos, también te facilita esta busqueda, ya que te permite filtrar os indicadores, por ejemplo por sexo, porque sabemos que necesitaras datos especificos para saber por ejemplo como se encuentra la situación laboral femenina es ese pais especifico.
 
    ## Objetivos de la página
+
 
    
 
