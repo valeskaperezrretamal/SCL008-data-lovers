@@ -2,7 +2,11 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1 ">
+>>>>>>> 4103564ce948705c60f2559b4a16edb3c70a5cf1
     <title>Indicadores Latam</title>
     <link rel="icon" type="image/png" href="Images/logo1.png"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,9 +27,15 @@
     <nav id="bar" class="row">
       <ol class="options-bar">
         
+<<<<<<< HEAD
         <li id="navIndex"> <a href="#index">Inicio </a> </li>
         <li id="navDefinition"> <a href="#definition">¿Qué es un indicador?</a>  </li>
         <li id="navIndicators"> <a href="#indicators">Indicadores</a>  </li>
+=======
+        <li> <a href="#index" id="welcome-page1">Inicio</a></li>
+        <li> <a href="#definition" id="welcome-page2">¿Qué es un indicador?</a></li>
+        <li> <a href="#indicators" id="indicators-pages">Indicadores</a></li>
+>>>>>>> 4103564ce948705c60f2559b4a16edb3c70a5cf1
 
       </ol>
     </nav>
@@ -63,6 +73,7 @@
         </article>
 
      <!--Empieza primer articulo de indices-->     
+<<<<<<< HEAD
        <article id="indicators" class="indicators1">
             <h3>Indicadores</h3>
             <article id="showDataScreen">
@@ -117,6 +128,59 @@
               
             </article>    
           </article>
+=======
+  <article id="indicators", class="indicators1">
+        <h3>Indicadores</h3>
+      <article id="showDataScreen">
+        <span id=derecha>Selecciona el indicador de tu interés:</span>    
+    <!--Sección que mostrará la lista de indicadores-->    
+        <section>
+            <select id="selectIndicators" size="15"></select>
+            <button type="button" id="order-button" class="btn btn-outline-dark">Z-A</button>
+        </section>
+    <!--Botón para ver el valor de los indices del indicador-->
+        <button type="button" id="indicator-button" class="btn btn-outline-dark">Ver Indicador</button>
+      </article>
+    <!--Sección correspondiente a selectores de País y Género--> 
+        <article= id="selectionScreen">
+        <section class="country-selection">
+         <p>Selecciona el país de tu interés:</p>
+  
+         <select id= "selectCountry" >
+          <option value="BRA">Brasil</option>
+          <option value="CHL">Chile</option>
+          <option value="MEX">Mexico</option>
+          <option value="PER">Perú</option>
+         </select>
+        </section>
+    <!--Sección donde se imprime lista de indicadores-->
+        <section class="gender-selection">  
+        <p>Elige tu género</p>
+        <select id="selectGender">
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>       
+        </select>
+        </section>
+    <!--Botón para mostrar lista de indicadores-->
+      <button type="button" id="next-button" class="btn btn-outline-dark">Siguiente</button>
+       </article> 
+      <!--Empieza segundo artículo de indices-->
+     <article id="tableScreen">
+        <!--Sección donde se imprime el valor historico del indicador seleccionado-->
+        <div id=idStats>
+        <button type="button" id="average-button" class="btn btn-outline-dark">Promedio</button>
+        <!--<button type="button" class="btn btn-outline-dark">Mediana</button>
+        <button type="button" class="btn btn-outline-dark">Maximo</button>
+        <button type="button" class="btn btn-outline-dark">Minimo</button>--> 
+        </div>
+        <section class="showTable"> 
+          <table id="tableIndicator"></table>
+        </section>
+        
+        
+      </article>    
+    </article>
+>>>>>>> 4103564ce948705c60f2559b4a16edb3c70a5cf1
 
     
     
