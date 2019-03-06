@@ -1,6 +1,6 @@
 //variables globales
 
-let actualCountry;//el pais seleccionado por el usuario
+window.actualCountry;//el pais seleccionado por el usuario
 let actualGender;//sexo seleccionado por el usuario 
 let actualIndicator;//el indicador seleccionado por el usuario
 

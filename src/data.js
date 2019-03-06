@@ -10,16 +10,6 @@ const example = () => {
 window.example = example;
 
 
-//funcion en la cual entra un objeto y sale un array con los elementos del objeto
-const GenerateList = (obj)  =>{
-  let Arroutput=[];
-  for (let prop in obj){
-      Arroutput.push(prop);
-  }
-  return Arroutput;
-};
-
-
 //funcion en la cual entra un objeto y una propiedad de ese objeto o elemento y devueve un array con los valores de la propiedad para cada elemento del objeto
 const GenerateSubList = (obj,subprop)  =>{
   let Arroutput=[];
@@ -42,7 +32,7 @@ window.dataToArray=dataToArray;
 
 //devuelve el indice del indicador
 const updateIndexIndicator=(Indicator)=>{
-  let allIndicators=GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
+  let allIndicators=GenerateSubList(window.WORLDBANK[window.actualCountry].indicators,"indicatorName");
   return allIndicators.indexOf(Indicator);
 
 }
@@ -50,7 +40,7 @@ window.updateIndexIndicator=updateIndexIndicator;
 
 //devuelve la data asociada al indicador y pais como un array
 const updateIndicatorData=(country,indexIndicator)=>{
-  return dataToArray(WORLDBANK[country].indicators[indexIndicator].data);
+  return dataToArray(window.WORLDBANK[country].indicators[indexIndicator].data);
 }
 window.updateIndicatorData=updateIndicatorData;
 
@@ -58,7 +48,7 @@ window.updateIndicatorData=updateIndicatorData;
 const computeMean=(arr)=>{
   let n=0;
   let sum=0;
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){n++;sum+=arr[i][1];}
   }
   return sum/n;
@@ -68,7 +58,7 @@ window.computeMean=computeMean;
 // calcula Maximo de arreglo de datos
 const computeMax=(arr)=>{
   let aux="";
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){
       if (aux===""){
         aux=arr[i][1];
@@ -84,7 +74,7 @@ window.computeMax=computeMax;
 // calcula Minimo de arreglo de datos
 const computeMin=(arr)=>{
   let aux="";
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){
       if (aux===""){
         aux=arr[i][1];
@@ -101,7 +91,7 @@ window.computeMin=computeMin;
 // calcula mediana de arreglo de datos
 const computeMedian=(arr)=>{
   let newArr=[];
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){newArr.push(arr[i][1]);}
   }
   newArr.sort()
@@ -116,8 +106,7 @@ window.computeMedian=computeMedian;
 //sortBy: number of column
 //sortOrder: "asc" or "desc"
 const sortData=(Data, sortBy, sortOrder)=>{
-  arrData=Data.slice(0);
-
+ let arrData=Data.slice(0);
 
   //define funcion de comparacion para sort
   const compare=(a,b)=>{
@@ -134,7 +123,7 @@ const sortData=(Data, sortBy, sortOrder)=>{
 //data: array
 //condition: string ("hombre" o "mujer")
 const filterData=(data,condition)=>{
-  arr=data.slice(0);
+  let arr=data.slice(0);
   if(condition==="hombre"){return arr.filter(filterForMen);}
   if(condition==="mujer"){return arr.filter(filterForWomen);}
   

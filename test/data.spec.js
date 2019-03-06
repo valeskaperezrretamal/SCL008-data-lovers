@@ -19,7 +19,7 @@ describe('', () => {
     });
   });
 
-  // Para comprobar la función computeMean,que calcula el promedio de la segunda columna, tiene que soportar valores vacios, de entrada tiene un array con dos columnas y de salida un promedio de la segunda columna, se salta y no concidera los elementos vacios 
+  // Para comprobar la función computeMax,que calcula el promedio de la segunda columna, tiene que soportar valores vacios, de entrada tiene un array con dos columnas y de salida un promedio de la segunda columna, se salta y no concidera los elementos vacios 
   describe('computeMax', () => {
     //que voy a testear, se puede hacer para saber si es función, para saber si me devulve lo que quiero
   it('debería ser una función',() => {
@@ -32,7 +32,7 @@ describe('', () => {
   });
 });
 
-// Para comprobar la función computeMean,que calcula el promedio de la segunda columna, tiene que soportar valores vacios, de entrada tiene un array con dos columnas y de salida un promedio de la segunda columna, se salta y no concidera los elementos vacios 
+// Para comprobar la función computeMin,que calcula el promedio de la segunda columna, tiene que soportar valores vacios, de entrada tiene un array con dos columnas y de salida un promedio de la segunda columna, se salta y no concidera los elementos vacios 
 describe('computeMin', () => {
   //que voy a testear, se puede hacer para saber si es función, para saber si me devulve lo que quiero
 it('debería ser una función',() => {
@@ -45,7 +45,7 @@ it('ingresa este array [[1960,""],[1987,21],[1899,98],[2002,45],[2010,70],[2017,
 });
 });
 
-// Para comprobar la función computeMean,que calcula el promedio de la segunda columna, tiene que soportar valores vacios, de entrada tiene un array con dos columnas y de salida un promedio de la segunda columna, se salta y no concidera los elementos vacios 
+// Para comprobar la función computeMedian,que calcula el promedio de la segunda columna, tiene que soportar valores vacios, de entrada tiene un array con dos columnas y de salida un promedio de la segunda columna, se salta y no concidera los elementos vacios 
 describe('computeMedian', () => {
   //que voy a testear, se puede hacer para saber si es función, para saber si me devulve lo que quiero
 it('debería ser una función',() => {
