@@ -67,3 +67,32 @@ describe("countryFilter"),() => {
 
 } 
 //Termina testing función filtrar por país
+describe("orderData"),() => {
+  //creo variables pequeñas con data por practicidad
+
+  const inputDesorganized=
+  [
+    { 'indicatorName': "La ley exige igualdad de remuneración para hombres y mujeres por trabajo de igual valor (1=sí; 0=no)" },
+    { 'indicatorName': "Prevalencia de anemia entre mujeres no embarazadas (% de mujeres entre 15-49 años)"},
+    { 'indicatorName': "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)"},
+    { 'indicatorName': "Fuerza laboral con educación intermedia (% del total)"}
+  ];
+
+
+  const outputOrganized=    
+  [
+  { 'indicatorName': "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)" },
+  { 'indicatorName': "Fuerza laboral con educación intermedia (% del total)"},
+  { 'indicatorName': "Prevalencia de anemia entre mujeres no embarazadas (% de mujeres entre 15-49 años)"},
+  { 'indicatorName':  "La ley exige igualdad de remuneración para hombres y mujeres por trabajo de igual valor (1=sí; 0=no)"}
+  ]
+
+}
+
+it("debería ser una función",() =>{
+  assert.equal(typeof orderData,"function")
+});
+
+it("debería retorna los indicadores ordenados alfábeticamente de A a la Z", () => {
+  assert.deepEqual(orderData,outputOrganized)  //usamos deepEqual para objetos y arrays ya que sino arroja error (===)
+});
