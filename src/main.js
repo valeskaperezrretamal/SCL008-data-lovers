@@ -3,7 +3,6 @@
 window.actualCountry;//el pais seleccionado por el usuario
 let actualGender;//sexo seleccionado por el usuario 
 let actualIndicator;//el indicador seleccionado por el usuario
-let Indicators;
 
 // define variables para los objetos de html
             //listados
@@ -87,6 +86,7 @@ const fillTable =(arr)=>{
     });
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
+
 
 //Genera codigo html para agregar Stats
 const fillStats=(arr)=>{
@@ -187,7 +187,11 @@ nextButton.addEventListener("click", ()=> {
 //Conecta el botón "ver indicador" para que muestre la tabla del indicador, esconde las primeras pantallas 
 indicatorButton.addEventListener("click", ()=> {    
     updateSelection();//actualiza las variables que guarda la selección del usuario
-
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
+    fillTable(arrayData);//dibuja tabla
+    showTableScreen();
+})
 
 //Conecta el botón "Stats" y muestra el valor
 statsButton.addEventListener("click", ()=> {
@@ -195,18 +199,21 @@ statsButton.addEventListener("click", ()=> {
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillStats(arrayData);//dibuja tabla
-})
 
+})
 //funcionalidad a ordenar tabla de indicador
 btOrderTableDesc.addEventListener("click", ()=>{
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     arrayData=sortData(arrayData, 0, "desc");
     fillTable(arrayData);//dibuja tabla
-});
+})
 btOrderTableAsc.addEventListener("click", ()=>{
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     arrayData=sortData(arrayData, 0, "asc");
     fillTable(arrayData);//dibuja tabla
-});
+})
+
+
+

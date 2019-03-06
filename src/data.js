@@ -38,19 +38,6 @@ const updateIndexIndicator=(Indicator)=>{
 }
 window.updateIndexIndicator=updateIndexIndicator;
 
-//Ordena de Z a A
-const orderData = (Indicators) => {
-  let orderedArray = Indicators
-  orderedArray.sort((a,z) => {
-
-    return z.localeCompare(a)
-  }
-  
-  )
-return orderedArray
-}
-
-
 //devuelve la data asociada al indicador y pais como un array
 const updateIndicatorData=(country,indexIndicator)=>{
   return dataToArray(window.WORLDBANK[country].indicators[indexIndicator].data);
@@ -119,7 +106,8 @@ window.computeMedian=computeMedian;
 //sortBy: number of column
 //sortOrder: "asc" or "desc"
 const sortData=(Data, sortBy, sortOrder)=>{
- let arrData=Data.slice(0);
+  let arrData=Data.slice(0);
+
 
   //define funcion de comparacion para sort
   const compare=(a,b)=>{
@@ -136,7 +124,7 @@ const sortData=(Data, sortBy, sortOrder)=>{
 //data: array
 //condition: string ("hombre" o "mujer")
 const filterData=(data,condition)=>{
-  let arr=data.slice(0);
+   let arr=data.slice(0);
   if(condition==="hombre"){return arr.filter(filterForMen);}
   if(condition==="mujer"){return arr.filter(filterForWomen);}
   
@@ -154,5 +142,6 @@ const filterForMen = (indicator) =>{
   else if(indicator.indexOf("femenino")>=0){return false;}
   else { return true;}
 }
+
 
 
