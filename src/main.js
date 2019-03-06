@@ -3,6 +3,7 @@
 let actualCountry;//el pais seleccionado por el usuario
 let actualGender;//sexo seleccionado por el usuario 
 let actualIndicator;//el indicador seleccionado por el usuario
+let Indicators;
 
 // define variables para los objetos de html
             //listados
@@ -86,6 +87,7 @@ const fillTable =(arr)=>{
     });
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
+
 
 
 //Genera codigo html para agregar Stats
@@ -187,6 +189,19 @@ nextButton.addEventListener("click", ()=> {
 //Conecta el botón "ver indicador" para que muestre la tabla del indicador, esconde las primeras pantallas 
 indicatorButton.addEventListener("click", ()=> {    
     updateSelection();//actualiza las variables que guarda la selección del usuario
+
+//Conecta el botón A-Z para que ordene
+const orderIndicator=document.getElementById("order-button").addEventListener("click",()=> {
+     
+    organizedIndicators=orderData(Indicators);
+    selectIndicators.innerHTML="";
+
+    fillList(organizedIndicators,"selectIndicators")
+    })
+
+//Conecta el botón "ver indicador" para que muestre la tabla de los indicadores, esconde las primeras pantallas 
+const showIndicatorValue=document.getElementById("indicator-button").addEventListener("click", ()=> {    updateSelection();//actualiza las variables que guarda la selección del usuario
+
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillTable(arrayData);//dibuja tabla
@@ -199,6 +214,59 @@ statsButton.addEventListener("click", ()=> {
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillStats(arrayData);//dibuja tabla
+
+    document.getElementById("showDataScreen").style.display="block" // hace visible el select de indicadores    
+    document.getElementById("tableScreen").style.display="block"
+    document.getElementById("index").style.display="none";
+    document.getElementById("definition").style.display="none";
+    document.getElementById("indicators").style.display="none";
+})
+
+//Genera codigo para agregar Stats
+const fillStats=(arr)=>{
+  document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+computeMean(arr)+"</p>"
+ }
+  //+
+    //                                                "<p> <strong>Mediana: </strong>"+computeMedian(arr)+"</p>"+
+      //                                              "<p> <strong>Maximo: </strong>"+computeMax(arr)+"</p>"+
+        //                                            "<p> <strong>Minimo: </strong>"+computeMin(arr)+"</p>"; 
+//
+
+//Empieza manejo de visualizar y ocultar pantallas
+//Llama al div de incio y definición y ocultar el de indicadores
+const enterInitialPage=()=> {
+    document.getElementById("index").style.display="block";
+    document.getElementById("definition").style.display="block";
+    document.getElementById("indicators").style.display="none";
+    document.getElementById("tableScreen").style.display="none";
+  }
+  
+ //Regresa a pantalla de incio 
+  const returnToInitialPage=document.getElementById("welcome-page1").addEventListener("click",()=> {
+    document.getElementById("index").style.display="block";
+    document.getElementById("definition").style.display="block";
+    document.getElementById("indicators").style.display="none";
+    document.getElementById("tableScreen").style.display="none";
+  })
+ 
+  //Regresar a segunda pantalla
+  const returnToSecondPage=document.getElementById("welcome-page2").addEventListener("click",()=> {
+    document.getElementById("index").style.display="block";
+    document.getElementById("definition").style.display="block";
+    document.getElementById("indicators").style.display="none";
+    document.getElementById("tableScreen").style.display="none";
+  }) 
+  //Llama al div de indicadores y ocultar el de inicio y definición
+  const enterIndicators=document.getElementById("indicators-pages").addEventListener("click", () =>{
+    document.getElementById("index").style.display="none";
+    document.getElementById("definition").style.display="none";
+    document.getElementById("indicators").style.display="block";
+    document.getElementById("showDataScreen").style.display="none";
+   
+  })
+
+
+
 
 })
 //funcionalidad a ordenar tabla de indicador

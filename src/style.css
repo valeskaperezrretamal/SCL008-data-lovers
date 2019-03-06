@@ -179,6 +179,7 @@ table, th, td {
    margin-left: 250px;
    margin-top: 40px;
  }
+
  /* Extra small devices (portrait phones, less than 576px)*/
  @media (max-width: 575.98px) { 
    #head-bar{
@@ -209,3 +210,9 @@ height: 200;
  
  /* Extra large devices (large desktops, 1200px and up)*/
  @media (min-width: 1200px) { }
+=======
+
+ #order-button{
+  float:right;
+ }
+
