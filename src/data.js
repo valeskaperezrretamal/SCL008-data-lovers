@@ -13,42 +13,27 @@ window.example = example;
 //funcion en la cual entra un objeto y sale un array con los elementos del objeto
 const GenerateList = (obj)  =>{
   let Arroutput=[];
-  for (prop in obj){
+  for (let prop in obj){
       Arroutput.push(prop);
   }
   return Arroutput;
 };
-window.GenerateList=GenerateList;
+
 
 //funcion en la cual entra un objeto y una propiedad de ese objeto o elemento y devueve un array con los valores de la propiedad para cada elemento del objeto
 const GenerateSubList = (obj,subprop)  =>{
   let Arroutput=[];
-  for (prop in obj){
+  for (let prop in obj){
     Arroutput.push(obj[prop][subprop]);    
-  };
+  }
   return Arroutput;
 };
 window.GenerateSubList=GenerateSubList;
 
-//funcion para filtrar indicadores para mujeres, esta se crea para poder ser usada en el metodo filter
-const filterForWomen = (indicator) => {
-  return !(indicator.indexOf("varones")>=0 && indicator.indexOf("mujeres")<=0 );
-}
-window.filterForWomen=filterForWomen;
-
-//funcion para filtrar indicadores para hombres
-const filterForMen = (indicator) =>{
-  if (indicator.indexOf("mujeres")>=0 && indicator.indexOf("varones")<=0 ){return false;}
-  else if(indicator.indexOf("Mujeres")>=0){return false;}
-  else if(indicator.indexOf("femenino")>=0){return false;}
-  else { return true;}
-}
-window.filterForMen=filterForMen;
-
 //convierte data tipo objeto a un array [año,valor indicador]
 const dataToArray = (data)=>{
   let arr=[];
-  for (element in data){    
+  for (let element in data){    
     arr.push([element,data[element]]);
   }
   return arr;
@@ -132,6 +117,8 @@ window.computeMedian=computeMedian;
 //sortOrder: "asc" or "desc"
 const sortData=(Data, sortBy, sortOrder)=>{
   arrData=Data.slice(0);
+
+
   //define funcion de comparacion para sort
   const compare=(a,b)=>{
     if (a[sortBy]>=b[sortBy]){return 1;} else {-1;}
@@ -143,4 +130,27 @@ const sortData=(Data, sortBy, sortOrder)=>{
   }
  
 }
+
+//data: array
+//condition: string ("hombre" o "mujer")
+const filterData=(data,condition)=>{
+  arr=data.slice(0);
+  if(condition==="hombre"){return arr.filter(filterForMen);}
+  if(condition==="mujer"){return arr.filter(filterForWomen);}
+  
+}
+
+//define funcion para filtrar indicadores para mujeres, esta se crea para poder ser usada en el metodo filter
+const filterForWomen = (indicator) => {
+  return !(indicator.indexOf("varones")>=0 && indicator.indexOf("mujeres")<=0 );
+}
+
+//define funcion para filtrar indicadores para hombres, esta se crea para poder ser usada en el metodo filter
+const filterForMen = (indicator) =>{
+  if (indicator.indexOf("mujeres")>=0 && indicator.indexOf("varones")<=0 ){return false;}
+  else if(indicator.indexOf("Mujeres")>=0){return false;}
+  else if(indicator.indexOf("femenino")>=0){return false;}
+  else { return true;}
+}
+
 
