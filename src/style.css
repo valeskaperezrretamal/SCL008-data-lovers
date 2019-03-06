@@ -182,38 +182,8 @@ table, th, td {
    margin-left: 250px;
    margin-top: 40px;
  }
-<<<<<<< HEAD
- /* Extra small devices (portrait phones, less than 576px)*/
- @media (max-width: 575.98px) { 
-   #head-bar{
-      width: 500px;
-      height:300px;
-   }  
-   #bar{
-     widows: 300px;
-     height: 200px;
-   }
-  .options-bar{
-widows: 300px;
-height: 200;
-  }
-  }
 
  
- /* Small devices (landscape phones, 576px and up)*/
- @media (min-width: 576px) and (max-width: 767.98px) {
-
-  }
- 
- /* Medium devices (tablets, 768px and up)*/
- @media (min-width: 768px) and (max-width: 991.98px) { }
- 
- /* Large devices (desktops, 992px and up)*/
- @media (min-width: 992px) and (max-width: 1199.98px) { }
- 
- /* Extra large devices (large desktops, 1200px and up)*/
- @media (min-width: 1200px) { }
-=======
 
  #order-button{
   float:right;
@@ -305,5 +275,4 @@ float:right;
   justify-content: center;
   }
 
-}
->>>>>>> 4103564ce948705c60f2559b4a16edb3c70a5cf1
+
