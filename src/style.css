@@ -183,8 +183,6 @@ table, th, td {
    margin-top: 40px;
  }
 
- 
-
  #order-button{
   float:right;
  }
@@ -196,8 +194,6 @@ table, th, td {
     margin-right: 120px;   /*Espacio entre las palabras de la barra*/
     margin-left: 80px;
   }
-  
-
  @media screen and (max-width:767px){
 
    
@@ -274,5 +270,3 @@ float:right;
   font-size: 14px;
   justify-content: center;
   }
-
-

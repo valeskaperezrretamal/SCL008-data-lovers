@@ -88,7 +88,6 @@ const fillTable =(arr)=>{
     document.getElementById("tableIndicator").innerHTML=htmlCode;      
 }
 
-
 //Genera codigo html para agregar Stats
 const fillStats=(arr)=>{
     document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+computeMean(arr)+"</p>" +
@@ -196,28 +195,18 @@ statsButton.addEventListener("click", ()=> {
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillStats(arrayData);//dibuja tabla
-
 })
 
-})
 //funcionalidad a ordenar tabla de indicador
 btOrderTableDesc.addEventListener("click", ()=>{
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     arrayData=sortData(arrayData, 0, "desc");
     fillTable(arrayData);//dibuja tabla
-})
+});
 btOrderTableAsc.addEventListener("click", ()=>{
     let actualIndexIndicator=updateIndexIndicator(actualIndicator);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     arrayData=sortData(arrayData, 0, "asc");
     fillTable(arrayData);//dibuja tabla
-})
-
-
-
-
-
-
-
-
+});
