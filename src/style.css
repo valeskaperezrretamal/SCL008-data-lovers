@@ -1,9 +1,22 @@
+/* condicion inicial navegacion */
+#indicators{
+  display: none;
+}
+#index{
+  display: block;
+}
+#definition{
+  display: none;
+}
+
 /*Inicia sección de barra menu*/
 
 #selectIndicators{ 
-  display: none;
+  
   padding: 0 auto;   /*quitar marjen y padding de default*/
   margin: 0 auto;
+  size: 15;
+   
 }
 
 
@@ -68,8 +81,9 @@ font-size: 16px;
 }
 
 .definition1 h3 {
+  padding-top: 100px;
   padding-left: 200px; 
-  margin-top: 300px;
+  
 }
 
 .whatis-text{
@@ -141,7 +155,13 @@ font-size: 16px;
 
 
 /*Inicia la pantalla donde se muestra la tabla con el valor historico de los indicadores*/
- #tableIndicator{
+
+table, th, td {
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid black;
+}
+/*  #tableIndicator{
   
   font-size: 14px;
   margin-top: 40px;
@@ -149,9 +169,9 @@ font-size: 16px;
   margin-right: 800px;
   border-style: none;
   height: 300px;  
-  /*border:double;*/
- }
-
+  /*border:double;
+ }*/
+ 
 
  #idStats button{
    float:right;
@@ -159,3 +179,33 @@ font-size: 16px;
    margin-left: 250px;
    margin-top: 40px;
  }
+ /* Extra small devices (portrait phones, less than 576px)*/
+ @media (max-width: 575.98px) { 
+   #head-bar{
+      width: 500px;
+      height:300px;
+   }  
+   #bar{
+     widows: 300px;
+     height: 200px;
+   }
+  .options-bar{
+widows: 300px;
+height: 200;
+  }
+  }
+
+ 
+ /* Small devices (landscape phones, 576px and up)*/
+ @media (min-width: 576px) and (max-width: 767.98px) {
+
+  }
+ 
+ /* Medium devices (tablets, 768px and up)*/
+ @media (min-width: 768px) and (max-width: 991.98px) { }
+ 
+ /* Large devices (desktops, 992px and up)*/
+ @media (min-width: 992px) and (max-width: 1199.98px) { }
+ 
+ /* Extra large devices (large desktops, 1200px and up)*/
+ @media (min-width: 1200px) { }
