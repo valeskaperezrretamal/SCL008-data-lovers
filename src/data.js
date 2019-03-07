@@ -10,6 +10,16 @@ const example = () => {
 window.example = example;
 
 
+//funcion en la cual entra un objeto y sale un array con los elementos del objeto
+const GenerateList = (obj)  =>{
+  let Arroutput=[];
+  for (let prop in obj){
+      Arroutput.push(prop);
+  }
+  return Arroutput;
+};
+window.GenerateList=GenerateList;
+
 //funcion en la cual entra un objeto y una propiedad de ese objeto o elemento y devueve un array con los valores de la propiedad para cada elemento del objeto
 const GenerateSubList = (obj,subprop)  =>{
   let Arroutput=[];
@@ -19,6 +29,29 @@ const GenerateSubList = (obj,subprop)  =>{
   return Arroutput;
 };
 window.GenerateSubList=GenerateSubList;
+
+//funcion para filtrar indicadores para mujeres, esta se crea para poder ser usada en el metodo filter
+const filterForWomen = (indicator) => {
+  return !(indicator.indexOf("varones")>=0 && indicator.indexOf("mujeres")<=0 );
+}
+window.filterForWomen=filterForWomen;
+
+//funcion para filtrar indicadores para hombres
+const filterForMen = (indicator) =>{
+  if (indicator.indexOf("mujeres")>=0 && indicator.indexOf("varones")<=0 ){return false;}
+  else if(indicator.indexOf("Mujeres")>=0){return false;}
+  else if(indicator.indexOf("femenino")>=0){return false;}
+  else { return true;}
+}
+window.filterForMen=filterForMen;
+
+//funcion filterdata
+const filterData =(data,condition)=>{
+  let arr=data.slice(0);
+  if(condition==="Hombre"){return arr.filter(filterForMen)}
+  if(condition==="Mujer"){return arr.filter(filterForWomen)}
+}
+
 
 //convierte data tipo objeto a un array [año,valor indicador]
 const dataToArray = (data)=>{
@@ -32,7 +65,7 @@ window.dataToArray=dataToArray;
 
 //devuelve el indice del indicador
 const updateIndexIndicator=(Indicator)=>{
-  let allIndicators=GenerateSubList(window.WORLDBANK[window.actualCountry].indicators,"indicatorName");
+  let allIndicators=GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
   return allIndicators.indexOf(Indicator);
 
 }
@@ -40,7 +73,7 @@ window.updateIndexIndicator=updateIndexIndicator;
 
 //devuelve la data asociada al indicador y pais como un array
 const updateIndicatorData=(country,indexIndicator)=>{
-  return dataToArray(window.WORLDBANK[country].indicators[indexIndicator].data);
+  return dataToArray(WORLDBANK[country].indicators[indexIndicator].data);
 }
 window.updateIndicatorData=updateIndicatorData;
 
@@ -48,7 +81,7 @@ window.updateIndicatorData=updateIndicatorData;
 const computeMean=(arr)=>{
   let n=0;
   let sum=0;
-  for(let i=0;i<arr.length;i++){
+  for(i=0;i<arr.length;i++){
     if (arr[i][1]!=""){n++;sum+=arr[i][1];}
   }
   return sum/n;
@@ -58,7 +91,7 @@ window.computeMean=computeMean;
 // calcula Maximo de arreglo de datos
 const computeMax=(arr)=>{
   let aux="";
-  for(let i=0;i<arr.length;i++){
+  for(i=0;i<arr.length;i++){
     if (arr[i][1]!=""){
       if (aux===""){
         aux=arr[i][1];
@@ -74,7 +107,7 @@ window.computeMax=computeMax;
 // calcula Minimo de arreglo de datos
 const computeMin=(arr)=>{
   let aux="";
-  for(let i=0;i<arr.length;i++){
+  for(i=0;i<arr.length;i++){
     if (arr[i][1]!=""){
       if (aux===""){
         aux=arr[i][1];
@@ -91,7 +124,7 @@ window.computeMin=computeMin;
 // calcula mediana de arreglo de datos
 const computeMedian=(arr)=>{
   let newArr=[];
-  for(let i=0;i<arr.length;i++){
+  for(i=0;i<arr.length;i++){
     if (arr[i][1]!=""){newArr.push(arr[i][1]);}
   }
   newArr.sort()
@@ -107,11 +140,9 @@ window.computeMedian=computeMedian;
 //sortOrder: "asc" or "desc"
 const sortData=(Data, sortBy, sortOrder)=>{
   let arrData=Data.slice(0);
-
-
   //define funcion de comparacion para sort
   const compare=(a,b)=>{
-    if (a[sortBy]>=b[sortBy]){return 1;} else {-1;}
+     if (a[sortBy]>=b[sortBy]){return 1;} else {-1;}
   }
   arrData.sort(compare);
   if (sortOrder==="asc"){return arrData;
@@ -121,27 +152,6 @@ const sortData=(Data, sortBy, sortOrder)=>{
  
 }
 
-//data: array
-//condition: string ("hombre" o "mujer")
-const filterData=(data,condition)=>{
-   let arr=data.slice(0);
-  if(condition==="hombre"){return arr.filter(filterForMen);}
-  if(condition==="mujer"){return arr.filter(filterForWomen);}
-  
-}
-
-//define funcion para filtrar indicadores para mujeres, esta se crea para poder ser usada en el metodo filter
-const filterForWomen = (indicator) => {
-  return !(indicator.indexOf("varones")>=0 && indicator.indexOf("mujeres")<=0 );
-}
-
-//define funcion para filtrar indicadores para hombres, esta se crea para poder ser usada en el metodo filter
-const filterForMen = (indicator) =>{
-  if (indicator.indexOf("mujeres")>=0 && indicator.indexOf("varones")<=0 ){return false;}
-  else if(indicator.indexOf("Mujeres")>=0){return false;}
-  else if(indicator.indexOf("femenino")>=0){return false;}
-  else { return true;}
-}
 
 
 
