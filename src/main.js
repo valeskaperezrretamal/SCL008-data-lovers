@@ -53,7 +53,7 @@ const updateSelection=()=>{
     actualCountry = selectCountry.options[selectCountry.selectedIndex].value;
     actualGender = selectGender.options[selectGender.selectedIndex].value;
     try {actualIndicator = selectIndicators.options[selectIndicators.selectedIndex].value;}
-    catch {;}
+    catch (error){;}
 }
 
 // Actualiza el listado de indicadores de acuerdo a la selección del usuario 
@@ -194,7 +194,7 @@ nextButton.addEventListener("click", ()=> {
 //Conecta el botón "ver indicador" para que muestre la tabla del indicador, esconde las primeras pantallas 
 indicatorButton.addEventListener("click", ()=> {    
     updateSelection();//actualiza las variables que guarda la selección del usuario
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillTable(arrayData);//dibuja tabla
     showTableScreen();
@@ -203,20 +203,20 @@ indicatorButton.addEventListener("click", ()=> {
 //Conecta el botón "Stats" y muestra el valor
 statsButton.addEventListener("click", ()=> {
     updateSelection();//actualiza las variables que guarda la selección del usuario
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     fillStats(arrayData);//dibuja tabla
 
 })
 //funcionalidad a ordenar tabla de indicador
 btOrderTableDesc.addEventListener("click", ()=>{
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     arrayData=sortData(arrayData, 0, "desc");
     fillTable(arrayData);//dibuja tabla
 })
 btOrderTableAsc.addEventListener("click", ()=>{
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator);
+    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
     let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
     arrayData=sortData(arrayData, 0, "asc");
     fillTable(arrayData);//dibuja tabla

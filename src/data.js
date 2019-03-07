@@ -51,7 +51,7 @@ const filterData =(data,condition)=>{
   if(condition==="Hombre"){return arr.filter(filterForMen)}
   if(condition==="Mujer"){return arr.filter(filterForWomen)}
 }
-
+window.filterData=filterData;
 
 //convierte data tipo objeto a un array [año,valor indicador]
 const dataToArray = (data)=>{
@@ -64,8 +64,8 @@ const dataToArray = (data)=>{
 window.dataToArray=dataToArray;
 
 //devuelve el indice del indicador
-const updateIndexIndicator=(Indicator)=>{
-  let allIndicators=GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
+const updateIndexIndicator=(Indicator,actualCountry)=>{
+  let allIndicators=GenerateSubList(window.WORLDBANK[actualCountry].indicators,"indicatorName");
   return allIndicators.indexOf(Indicator);
 
 }
@@ -73,7 +73,7 @@ window.updateIndexIndicator=updateIndexIndicator;
 
 //devuelve la data asociada al indicador y pais como un array
 const updateIndicatorData=(country,indexIndicator)=>{
-  return dataToArray(WORLDBANK[country].indicators[indexIndicator].data);
+  return dataToArray(window.WORLDBANK[country].indicators[indexIndicator].data);
 }
 window.updateIndicatorData=updateIndicatorData;
 
@@ -81,7 +81,7 @@ window.updateIndicatorData=updateIndicatorData;
 const computeMean=(arr)=>{
   let n=0;
   let sum=0;
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){n++;sum+=arr[i][1];}
   }
   return sum/n;
@@ -91,7 +91,7 @@ window.computeMean=computeMean;
 // calcula Maximo de arreglo de datos
 const computeMax=(arr)=>{
   let aux="";
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){
       if (aux===""){
         aux=arr[i][1];
@@ -107,7 +107,7 @@ window.computeMax=computeMax;
 // calcula Minimo de arreglo de datos
 const computeMin=(arr)=>{
   let aux="";
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){
       if (aux===""){
         aux=arr[i][1];
@@ -124,7 +124,7 @@ window.computeMin=computeMin;
 // calcula mediana de arreglo de datos
 const computeMedian=(arr)=>{
   let newArr=[];
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if (arr[i][1]!=""){newArr.push(arr[i][1]);}
   }
   newArr.sort()
@@ -146,11 +146,12 @@ const sortData=(Data, sortBy, sortOrder)=>{
   }
   arrData.sort(compare);
   if (sortOrder==="asc"){return arrData;
-  }else if ("desc"){
+  }else if (sortOrder==="desc"){
     return arrData.reverse();
   }
  
 }
+window.sortData=sortData;
 
 
 
