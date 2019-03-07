@@ -1,4 +1,4 @@
-window.WORLDBANK = {
+WORLDBANK = {
   "PER": {
     "indicators": [
       {
@@ -36721,3 +36721,4 @@ window.WORLDBANK = {
   }
 }
 ;;
+window.WORLDBANK = WORLDBANK;

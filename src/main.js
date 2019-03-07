@@ -18,9 +18,9 @@ const btOrderListAsc =document.getElementById("btOrderListAsc");
 const btOrderListDesc =document.getElementById("btOrderListDesc");
 const nextButton=document.getElementById("next-button");
 const indicatorButton=document.getElementById("indicator-button");
-const statsButton=document.getElementById("average-button")
+const statsButton=document.getElementById("average-button");
 const btOrderTableAsc=document.getElementById("btOrderTableAsc");
-const btOrderTableDesc=document.getElementById("btOrderTableDesc")
+const btOrderTableDesc=document.getElementById("btOrderTableDesc");
 
 
             //secciones
@@ -52,16 +52,19 @@ const fillList = (list,id) =>{
 const updateSelection=()=>{
     actualCountry = selectCountry.options[selectCountry.selectedIndex].value;
     actualGender = selectGender.options[selectGender.selectedIndex].value;
-    try {actualIndicator = selectIndicators.options[selectIndicators.selectedIndex].value;}
-    catch (error){;}
+    try {
+        actualIndicator = selectIndicators.options[selectIndicators.selectedIndex].value;
+    }
+    catch (error) {
+        ;
+    }
 }
-
 // Actualiza el listado de indicadores de acuerdo a la selección del usuario 
 // Actualiza el listado de indicadores de acuerdo a la selección de país y genero 
 const updateIndicators=()=>{
-    let Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
+    let Indicators = window.GenerateSubList(window.WORLDBANK[actualCountry].indicators,"indicatorName");
     Indicators.sort();
-    Indicators=filterData(Indicators,actualGender);
+    Indicators=window.filterData(Indicators,actualGender);
 /*     if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
     if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);} */
     fillList(Indicators,"selectIndicators");
@@ -91,10 +94,10 @@ const fillTable =(arr)=>{
 
 //Genera codigo html para agregar Stats
 const fillStats=(arr)=>{
-    document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+computeMean(arr)+"</p>" +
-                                                   "<p> <strong>Mediana: </strong>"+computeMedian(arr)+"</p>"+
-                                                     "<p> <strong>Maximo: </strong>"+computeMax(arr)+"</p>"+
-                                                    "<p> <strong>Minimo: </strong>"+computeMin(arr)+"</p>"; 
+    document.getElementById("idStats").innerHTML= "<p> <strong>Promedio: </strong>"+window.computeMean(arr)+"</p>" +
+                                                   "<p> <strong>Mediana: </strong>"+window.computeMedian(arr)+"</p>"+
+                                                     "<p> <strong>Maximo: </strong>"+window.computeMax(arr)+"</p>"+
+                                                    "<p> <strong>Minimo: </strong>"+window.computeMin(arr)+"</p>"; 
 }
 
 //// navegacion por pagina
@@ -165,8 +168,8 @@ navIndicators.addEventListener("click", ()=>{
 
 //funcionalidad a ordenar listado de indicadores
 btOrderListDesc.addEventListener("click", ()=>{
-    let Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
-    Indicators=filterData(Indicators,actualGender);
+    let Indicators =window.GenerateSubList(window.WORLDBANK[actualCountry].indicators,"indicatorName");
+    Indicators=window.filterData(Indicators,actualGender);
     Indicators.sort();
     
 /*     if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
@@ -174,8 +177,8 @@ btOrderListDesc.addEventListener("click", ()=>{
     fillList(Indicators,"selectIndicators");
 })
 btOrderListAsc.addEventListener("click", ()=>{
-    let Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
-    Indicators=filterData(Indicators,actualGender);
+    let Indicators = window.GenerateSubList(window.WORLDBANK[actualCountry].indicators,"indicatorName");
+    Indicators=window.filterData(Indicators,actualGender);
     Indicators.sort().reverse();
     
 /*     if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
@@ -194,8 +197,8 @@ nextButton.addEventListener("click", ()=> {
 //Conecta el botón "ver indicador" para que muestre la tabla del indicador, esconde las primeras pantallas 
 indicatorButton.addEventListener("click", ()=> {    
     updateSelection();//actualiza las variables que guarda la selección del usuario
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
-    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
+    let actualIndexIndicator=window.updateIndexIndicator(actualIndicator,actualCountry);
+    let arrayData=window.updateIndicatorData(actualCountry,actualIndexIndicator);
     fillTable(arrayData);//dibuja tabla
     showTableScreen();
 })
@@ -203,21 +206,21 @@ indicatorButton.addEventListener("click", ()=> {
 //Conecta el botón "Stats" y muestra el valor
 statsButton.addEventListener("click", ()=> {
     updateSelection();//actualiza las variables que guarda la selección del usuario
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
-    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
+    let actualIndexIndicator=window.updateIndexIndicator(actualIndicator,actualCountry);
+    let arrayData=window.updateIndicatorData(actualCountry,actualIndexIndicator);
     fillStats(arrayData);//dibuja tabla
 
 })
 //funcionalidad a ordenar tabla de indicador
 btOrderTableDesc.addEventListener("click", ()=>{
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
-    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
-    arrayData=sortData(arrayData, 0, "desc");
+    let actualIndexIndicator=window.updateIndexIndicator(actualIndicator,actualCountry);
+    let arrayData=window.updateIndicatorData(actualCountry,actualIndexIndicator);
+    arrayData=window.sortData(arrayData, 0, "desc");
     fillTable(arrayData);//dibuja tabla
 })
 btOrderTableAsc.addEventListener("click", ()=>{
-    let actualIndexIndicator=updateIndexIndicator(actualIndicator,actualCountry);
-    let arrayData=updateIndicatorData(actualCountry,actualIndexIndicator);
-    arrayData=sortData(arrayData, 0, "asc");
+    let actualIndexIndicator=window.updateIndexIndicator(actualIndicator,actualCountry);
+    let arrayData=window.updateIndicatorData(actualCountry,actualIndexIndicator);
+    arrayData=window.sortData(arrayData, 0, "asc");
     fillTable(arrayData);//dibuja tabla
 })
