@@ -12,7 +12,7 @@ Esperamos ser de gran ayuda para ti en esta descisión tan importante.
 
 
 
-#### Usuarios 
+### Usuarios 
 
 Nuestros usuarios son personas que buscan mudarse a Brasil, Chile, México o Péru.
 Son futuros migrantes o migrantes que buscan un nuevo cambio, les gusta evaluar oportunidades, se preocupan por su futuro y por el impacto de las decisiones. Son personas que se mantiene informadas del entorno internacional.
@@ -20,7 +20,7 @@ Son futuros migrantes o migrantes que buscan un nuevo cambio, les gusta evaluar 
 
 ## Diseño
 
-#### Sketch de baja fidelidad
+### Sketch de baja fidelidad
 ![alt text](Images/Baja-fidelidad.jpeg)
 
 La versión inicial la conformaban 2 pantallas:
@@ -32,7 +32,7 @@ La versión inicial la conformaban 2 pantallas:
 
 De acuerdo al feedback recibido, se sugirió una pantalla en donde expliques cual es el objetivo de la página asi como una introducción a lo qué es un indicador. Además se nos comento qué esta pantalla contaba con demasiados botones en la parte de abajo por lo que era algo abrumador.
 
-####  Sketch de alta fidelidad
+###  Sketch de alta fidelidad
 
 Esta sección no incluye fotos, ya que compartimos al final el link en Figma y Zeplin, en donde podrás observar el trabajo de mejor manera.
 
@@ -47,14 +47,13 @@ La versión de alta fidelidad esta creada de la siguiente forma:
 
 Después de realizar esta versión, los feedback indicaron que la primer pantalla contenia mucho texto yq ue los botones de ordenar eran demasiado pequeños.
 
-[link Figma](https://www.figma.com/file/K3fbFcsHsHs7Z2xTWSGCNlR4/Indicadores-LATAM?node-id=0%3A1)
+[Figma](https://www.figma.com/file/K3fbFcsHsHs7Z2xTWSGCNlR4/Indicadores-LATAM?node-id=0%3A1)
 
-[link Zeplin web](zpl.io/boDDXmk)
-
-[link Zeplin app](zpl://project?pid=5c7595ff2e478f51ff00d383)
+[Zeplin](https://zpl.io/scene/VkGvz45)
 
 
-#### Diseño Final
+
+####  Diseño Final
 **-Sección Inicio** 
 El contenido permanecio, es decir muestra el objetivo del proyecto, la difernecia es que se separo de la pantalla de la explicación del indicador.
 ![alt text](Images/Screens/Inicio.png)
