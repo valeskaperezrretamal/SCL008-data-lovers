@@ -1,7 +1,7 @@
-/*  global.window = global;
+global.window = global;
 global.assert = require('chai').assert;
 require('../src/data');
-nrequire('./data.spec.js');  */
+require('./data.spec.js');
 
 
 describe('Tests', () => {
