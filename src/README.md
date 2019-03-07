@@ -53,7 +53,7 @@ Después de realizar esta versión, los feedback indicaron que la primer pantall
 
 
 
-#### Diseño Final
+###  Diseño final
 **-Sección Inicio** 
 El contenido permanecio, es decir muestra el objetivo del proyecto, la difernecia es que se separo de la pantalla de la explicación del indicador.
 ![alt text](Images/Screens/Inicio.png)
