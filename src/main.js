@@ -1,6 +1,6 @@
 //variables globales
 
-window.actualCountry;//el pais seleccionado por el usuario
+let actualCountry;//el pais seleccionado por el usuario
 let actualGender;//sexo seleccionado por el usuario 
 let actualIndicator;//el indicador seleccionado por el usuario
 
@@ -59,10 +59,11 @@ const updateSelection=()=>{
 // Actualiza el listado de indicadores de acuerdo a la selección del usuario 
 // Actualiza el listado de indicadores de acuerdo a la selección de país y genero 
 const updateIndicators=()=>{
-    Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
+    let Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
     Indicators.sort();
-    if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
-    if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);}
+    Indicators=filterData(Indicators,actualGender);
+/*     if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
+    if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);} */
     fillList(Indicators,"selectIndicators");
 }
 //Genera el codigo html para llenar la tabla con la data, llena la tabla con los datos de data (año e indicador)
@@ -164,15 +165,21 @@ navIndicators.addEventListener("click", ()=>{
 
 //funcionalidad a ordenar listado de indicadores
 btOrderListDesc.addEventListener("click", ()=>{
-    Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
-    Indicators=sortData(Indicators, 0, "desc");
+    let Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
     Indicators=filterData(Indicators,actualGender);
+    Indicators.sort();
+    
+/*     if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
+    if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);} */
     fillList(Indicators,"selectIndicators");
 })
 btOrderListAsc.addEventListener("click", ()=>{
-    Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
-    Indicators=sortData(Indicators, 0, "asc");
+    let Indicators = GenerateSubList(WORLDBANK[actualCountry].indicators,"indicatorName");
     Indicators=filterData(Indicators,actualGender);
+    Indicators.sort().reverse();
+    
+/*     if(actualGender==="Hombre"){Indicators=Indicators.filter(filterForMen);}
+    if(actualGender==="Mujer"){Indicators=Indicators.filter(filterForWomen);} */
     fillList(Indicators,"selectIndicators");
 })
 
@@ -214,6 +221,3 @@ btOrderTableAsc.addEventListener("click", ()=>{
     arrayData=sortData(arrayData, 0, "asc");
     fillTable(arrayData);//dibuja tabla
 })
-
-
-
