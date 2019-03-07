@@ -81,7 +81,7 @@ font-size: 16px;
 }
 
 .definition1 h3 {
-  padding-top: 100px;
+  padding-top: 60px;
   padding-left: 200px; 
   
 }
@@ -90,7 +90,7 @@ font-size: 16px;
     width: 60%;
     text-align: justify;
     padding-left: 40px;
-    padding-top: 60px;
+    padding-top: 40px;
     font-family: Roboto;
     font-size: 24px;
 }
@@ -102,65 +102,77 @@ font-size: 16px;
 
 .image-second-screen{
   float:right;
+  padding-top:40px;
 }
 /*Temina sección de incio y que es un indicador*/
 
 /*Inicia sección donde se muestran los indicadores*/
 .indicators1 h3{ 
   text-align: center; 
- margin-top: 40px;
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
 
+#selectionScreen{
+  margin-left: 467px;
+  left:50%;
+}
 .country-selection, .gender-selection{
-  width: 60%;
+  /*width: 60%;*/
   text-align: justify;
-  padding-left: 40px;
-  padding-top: 50px;
+/*  padding-left: 40px;*/
+  padding-top: 30px;
+/*  margin-left: 20px;*/
   font-family: Roboto;
   font-size: 24px;           
 }
 
 .indicators1 span{
-  float: right;
-  width: 50%;
   text-align: center; 
   font-family: Roboto;
   font-size: 24px;
-  padding-top: 40px;
-  margin-right: 80px;
+  margin-left: 117px;
 }
 
 #next-button{
   margin-left: 150px;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 #selectIndicators{
-  width: 650px;
-  float: right;
-  height: 300px;
-  margin-top: 10px;
-  margin-right: 50px;
+  width: 1001px;
+  height: 350px;
+  margin-top: 5px;
+  margin-left: 117px;
   font-size: 14px;
  }
 
- #indicator-button{
-  width: 150px;
+ #selectIndicators span{
   float: right;
-  margin-right: 350px;
-  margin-left: 250px;
-  margin-top: 40px;
+ }
 
+ #indicator-button{
+  width: 151px;
+  margin-left: 542px;
+  margin-top: 20px;
 }
 
 
 /*Inicia la pantalla donde se muestra la tabla con el valor historico de los indicadores*/
 
+#tableScreen{
+  text-align: center; 
+  margin-top: 30px;
+}
+
 table, th, td {
-  padding-left: 30px;
+  padding-left:  30px;
   padding-right: 30px;
+  margin-top: 30px;
   border: 1px solid black;
 }
+
+
 /*  #tableIndicator{
   
   font-size: 14px;
@@ -172,6 +184,14 @@ table, th, td {
   /*border:double;
  }*/
  
+ #btOrderListAsc{
+  float: right;
+  margin-right: 117px;
+ }
+
+ #btOrderListDesc{
+  float:right;
+ }
 
  #idStats button{
    float:right;
