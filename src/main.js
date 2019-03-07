@@ -56,7 +56,7 @@ const updateSelection=()=>{
         actualIndicator = selectIndicators.options[selectIndicators.selectedIndex].value;
     }
     catch (error) {
-        ;
+        return error;
     }
 }
 // Actualiza el listado de indicadores de acuerdo a la selección del usuario 

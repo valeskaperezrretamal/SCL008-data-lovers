@@ -138,7 +138,7 @@ window.computeMedian=computeMedian;
 //data:array
 //sortBy: number of column
 //sortOrder: "asc" or "desc"
-window.sortData=(Data, sortBy, sortOrder)=>{
+const sortData=(Data, sortBy, sortOrder)=>{
   let arrData=Data.slice(0);
   //define funcion de comparacion para sort
   const compare=(a,b)=>{
