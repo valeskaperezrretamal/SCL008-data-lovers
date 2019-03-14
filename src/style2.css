@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Play|Source+Sans+Pro');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/**************HEADER*****************************/
+header label {
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+header {
+    width: 100%;
+    height: 50px;
+    background: rgb(36, 25, 107);
+    color: rgb(175, 166, 166);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.container {
+    width: 98%;
+    margin: auto;
+    
+}
+
+header h1 {
+    float: left;
+    font-family: 'Play', sans-serif;
+}
+
+header .contenedor {
+    display: table;
+}
+/************MENU*********************************************/
+#menu-bar {
+    display: none;
+}
+.menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(96, 85, 158, 0.9);
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+.menu a {
+    display: block;
+    color: rgb(8, 8, 8);
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+}
+   
+    .menu a {
+        border: none;
+    }
