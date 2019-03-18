@@ -257,12 +257,18 @@ table, th, td {
    }
    #head-bar{
   height: 150px;
+  width: 395px;
    }
    .options-bar li{
     margin-right: 30px;
+    width: 395px;
    }
    .options-bar li a{
     font-size: 14px;
+    width: 395px;
+    }
+    #bar{
+      width: 395px;
     }
   .index-text{
     font-size: 18px;
@@ -333,6 +339,7 @@ table, th, td {
    .options-bar li a{
     font-size: 14px;
     }
+    
   .index-text{
     font-size: 18px;
   }
