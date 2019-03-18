@@ -1,26 +1,119 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style2.css" />
     <link rel="stylesheet" href="css/fontello.css">
     <title class= "icon-globe">Indicadores LATAM</title>
 </head>
 <body>
-    <header>
+    <header id= "head-bar">
       <div class= "container" >
           <h1 class= "icon-globe">Indicadores LATAM</h1>
           <input type="checkbox" id="menu-bar">
           <label class="icon-menu" for="menu-bar"></label>
-          <nav class="menu">
-                <a href="">Inicio</a>
-                <a href="">¿Qué es un indicador?</a>
-                <a href="">Indicadores</a>                
+          <nav class="menu">                           
+                    <a href="" id="navIndex">Inicio</a>                    
+                    <a href="" id="navDefinition">¿Qué es un indicador?</a>
+                    <a href="" id="navIndicators">Indicadores</a>                                
             </nav>
       </div>
     </header>
-    
+    <main>
+        <section id="start">
+            <img src="images/thinking.png">
+            <div class= "container">
+                    <h2>Inicio</h2>
+                    <p>Si en tus planes está mudarte dentro de Latinoamérica, ya sea por que te surgió la oportunidad, porque eres de espíritu aventurero o por una necesidad específica, 
+                            Indicadores LATAM te ayuda  a tomar una decisión más informada en tu proceso de migración .
+                            Aquí encontrarás información económica, social y demográfica relevante sobre Brasil, México, Chile y Perú.</p>
+            </div>
+            
+        </section>
+        
+        <section id= "what-indicator">
+            <img src= "images/comparing.PNG">
+            <div class= "container">
+            <h2>¿Qué es un indocador?</h2>
+            <p>Los indicadores son datos estadísticos que nos permiten entender cómo estuvo, está o puede estar la economía,
+                    demografía o diferentes fenómenos sociales de un país. Informarte sobre los indicadores del país a donde vas te ayudará 
+                    a tener una mejor perspectiva y conocimiento de este.</p>
+                </div>
+        </section>-->
+
+        
+     <!--Empieza primer articulo de indices-->     
+       <!--<article id="indicators" class="indicators1">
+        <h3>Indicadores</h3>
+        <article id="showDataScreen">
+          <span>Selecciona el indicador de tu interés:</span>  -->  
+      <!--Sección que mostrará la lista de indicadores-->    
+         
+             <!-- <button id="btOrderListAsc" class="btn btn-outline-dark">Z-A</button>
+              <button id="btOrderListDesc" class="btn btn-outline-dark">A-Z</button>
+              <select id="selectIndicators" size="15"></select>-->
+         
+      <!--Botón para ver el valor de los indices del indicador-->
+          <!--<button type="button" id="indicator-button" class="btn btn-outline-dark">Ver Indicador</button>
+        </article>-->
+  <!--Sección correspondiente a selectores de País y Género--> 
+       <!-- <article id="selectionScreen">
+            <section class="country-selection">
+              <p>Selecciona el país de tu interés:</p>
+        
+              <select id= "selectCountry" >
+                <option value="BRA">Brasil</option>
+                <option value="CHL">Chile</option>
+                <option value="MEX">Mexico</option>
+                <option value="PER">Perú</option>
+              </select>
+            </section>-->
+        <!--Sección donde se imprime lista de indicadores-->
+            <!--<section class="gender-selection">  
+              <p>Elige tu género</p>
+              <select id="selectGender">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>       
+              </select>
+            </section>-->
+        <!--Botón para mostrar lista de indicadores-->
+            <!--<button type="button" id="next-button" class="btn btn-outline-dark">Siguiente</button>
+        </article> -->
+    <!--Empieza segundo artículo de indices-->
+        <!--<article id="tableScreen">-->
+          <!--Sección donde se imprime el valor historico del indicador seleccionado-->
+         <!-- <div id="idStats"></div>
+          <button id="btOrderTableAsc" class="btn btn-outline-dark">ordenar ascendente</button>
+          <button id="btOrderTableDesc" class="btn btn-outline-dark">ordenar descendente</button>
+          <button type="button" id="average-button" class="btn btn-outline-dark">Estadisticas</button>-->
+            <!--<button type="button" class="btn btn-outline-dark">Mediana</button>
+            <button type="button" class="btn btn-outline-dark">Maximo</button>
+            <button type="button" class="btn btn-outline-dark">Minimo</button>--> 
+          
+         <!--  //<section class="showTable">  -->
+           <!-- <table align="center" id="tableIndicator" ></table>-->
+          <!-- </section> -->
+          
+         <!-- <footer>
+
+          </footer>
+          
+        </article>    
+      </article>-->
+
+
+
+
+<!--</main>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./data/worldbank/worldbank.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
 </body>
-</html>
+</html>-->
