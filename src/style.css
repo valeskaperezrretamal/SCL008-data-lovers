@@ -318,7 +318,7 @@ table, th, td {
 @media screen and (max-width:480px){
   #logo span {
     font-size: 28px;
-    margin-left: 40px;
+    margin-left: 0px;
    }
    #logo img{
    width: 50px;
