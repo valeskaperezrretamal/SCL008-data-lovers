@@ -1,4 +1,10 @@
-/* condicion inicial navegacion agrego Vale*/
+/* condicion inicial navegacion */
+
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 #indicators{
   display: none;
 }
@@ -11,12 +17,12 @@
 
 /*Inicia sección de barra menu*/
 
-#selectIndicators{ 
-  
+#selectIndicators{
+
   padding: 0 auto;   /*quitar marjen y padding de default*/
   margin: 0 auto;
   size: 15;
-   
+
 }
 
 
@@ -24,16 +30,16 @@
   background-image: url(Images/map_latin_america.png);
   background-repeat: no-repeat;
   background-size: contain;
-  color:  #000000d7; 
+  color:  #000000d7;
 }
 
 /*Inicia sección de titulo y logo*/
-#logo span {  
+#logo span {
     text-align: center;
     width: 500px;
     height: 102px;
     font-size: 36px;
-    margin-left: 120px;  
+    margin-left: 120px;
 }
 
 #logo img{
@@ -42,7 +48,7 @@
   margin-top: 10px;
 }
 
-#head-bar{ 
+#head-bar{
   height: 200px;
   border: solid 2px #000000d7;
   background-color: rgba(93, 130, 165, 0.88);
@@ -62,7 +68,7 @@
   margin-top: 10px;
 }
 
-.options-bar li a{  
+.options-bar li a{
 text-decoration: none;       /*Quitarle el subrayado a las palabras de la barra*/
 color: rgba(0, 0, 0, 0.753);
 font-size: 16px;
@@ -77,13 +83,13 @@ font-size: 16px;
     padding-left: 40px;
     padding-top: 100px;
     font-family: Roboto;
-    font-size: 24px;           
+    font-size: 24px;
 }
 
 .definition1 h3 {
   padding-top: 60px;
-  padding-left: 200px; 
-  
+  padding-left: 200px;
+
 }
 
 .whatis-text{
@@ -95,9 +101,9 @@ font-size: 16px;
     font-size: 24px;
 }
 
-.image-first-screen  {  
+.image-first-screen  {
   float: right;
-  padding-top: 40px; 
+  padding-top: 40px;
 }
 
 .image-second-screen{
@@ -107,8 +113,8 @@ font-size: 16px;
 /*Temina sección de incio y que es un indicador*/
 
 /*Inicia sección donde se muestran los indicadores*/
-.indicators1 h3{ 
-  text-align: center; 
+.indicators1 h3{
+  text-align: center;
   margin-top: 40px;
   margin-bottom: 0px;
 }
@@ -121,11 +127,11 @@ font-size: 16px;
   text-align: justify;
   padding-top: 30px;
   font-family: Roboto;
-  font-size: 24px;           
+  font-size: 24px;
 }
 
 .indicators1 span{
-  text-align: center; 
+  text-align: center;
   font-family: Roboto;
   font-size: 24px;
   margin-left: 117px;
@@ -158,7 +164,7 @@ font-size: 16px;
 /*Inicia la pantalla donde se muestra la tabla con el valor historico de los indicadores*/
 
 #tableScreen{
-  text-align: center; 
+  text-align: center;
   margin-top: 30px;
 }
 
@@ -168,7 +174,7 @@ table, th, td {
   margin-top: 30px;
   border: 1px solid black;
 }
- 
+
  #btOrderListAsc{
   float: right;
   margin-right: 117px;
@@ -184,50 +190,32 @@ table, th, td {
    margin-left: 250px;
    margin-top: 40px;
  }
- /* Extra small devices (portrait phones, less than 576px)*/
- @media (max-width: 575.98px) { 
-   #head-bar{
-      width: 500px;
-      height:300px;
-   }  
-   #bar{
-     widows: 300px;
-     height: 200px;
-   }
-  .options-bar{
-widows: 300px;
-height: 200;
-  }
-  }
-
- 
-
 
  /* desktop first, empezando por pantalla más grande*/
 
  @media screen and (max-width:1024px){
   .options-bar li{
-    margin-right: 100px;   
+    margin-right: 100px;
    }
   .index-text{
     font-size: 20px;
-    width: 50%;           
+    width: 50%;
   }
 
-.image-first-screen  {  
-  width: 50%;  
+.image-first-screen  {
+  width: 50%;
 }
 
 .definition1 h3 {
   padding-top: 60px;
-  padding-left: 90px; 
-  
+  padding-left: 90px;
+
 }
 .whatis-text{
   font-size: 20px;
 }
 
-.indicators1 h3{ 
+.indicators1 h3{
   font-size: 24px;
 }
 
@@ -235,7 +223,7 @@ height: 200;
   margin-left: 362px;
 }
 .country-selection, .gender-selection{
-  font-size: 20px;           
+  font-size: 20px;
 }
 #next-button{
   margin-left: 90px;
@@ -257,44 +245,44 @@ height: 200;
   font-size: 14px;
 }
 }
-  
+
 
  @media screen and (max-width:767px){
-  #logo span {  
+  #logo span {
     font-size: 32px;
-    margin-left: 100px;  
+    margin-left: 100px;
    }
    #logo img{
    width: 150px;
    }
-   #head-bar{ 
+   #head-bar{
   height: 150px;
    }
    .options-bar li{
     margin-right: 30px;
    }
-   .options-bar li a{  
+   .options-bar li a{
     font-size: 14px;
     }
   .index-text{
-    font-size: 18px;         
+    font-size: 18px;
   }
 
-  /*.image-first-screen  {  
+  /*.image-first-screen  {
   width: inherit;
-  max-width: 50%;  
+  max-width: 50%;
   }*/
 
 .definition1 h3 {
   padding-top: 60px;
-  padding-left: 90px; 
-  
+  padding-left: 90px;
+
 }
 .whatis-text{
   font-size: 20px;
 }
 
-.indicators1 h3{ 
+.indicators1 h3{
   font-size: 22px;
 }
 
@@ -302,7 +290,7 @@ height: 200;
   margin-left: 300px;
 }
 .country-selection, .gender-selection{
-  font-size: 18px;           
+  font-size: 18px;
 }
 #next-button{
   margin-left: 50px;
@@ -323,46 +311,46 @@ height: 200;
 
 #tableScreen{
   font-size: 10px;
-}   
+}
 }
 
 
 @media screen and (max-width:480px){
-  #logo span {  
+  #logo span {
     font-size: 28px;
-    margin-left: 40px;  
+    margin-left: 40px;
    }
    #logo img{
-   width: 120px;
+   width: 50px;
    }
-   #head-bar{ 
+   #head-bar{
   height: 120px;
    }
    .options-bar li{
     margin-right: 30px;
    }
-   .options-bar li a{  
+   .options-bar li a{
     font-size: 14px;
     }
   .index-text{
-    font-size: 18px;         
+    font-size: 18px;
   }
 
-  /*.image-first-screen  {  
+  /*.image-first-screen  {
   width: inherit;
-  max-width: 50%;  
+  max-width: 50%;
   }*/
 
 .definition1 h3 {
   padding-top: 60px;
-  padding-left: 90px; 
-  
+  padding-left: 90px;
+
 }
 .whatis-text{
   font-size: 20px;
 }
 
-.indicators1 h3{ 
+.indicators1 h3{
   font-size: 22px;
 }
 
@@ -370,7 +358,7 @@ height: 200;
   margin-left: 300px;
 }
 .country-selection, .gender-selection{
-  font-size: 18px;           
+  font-size: 18px;
 }
 #next-button{
   margin-left: 50px;
@@ -391,12 +379,5 @@ height: 200;
 
 #tableScreen{
   font-size: 10px;
-}   
-} 
 }
-   
-
-
-@media screen and (max-width:320px){
-  
 }
