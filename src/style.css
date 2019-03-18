@@ -52,6 +52,7 @@
   height: 200px;
   border: solid 2px #000000d7;
   background-color: rgba(93, 130, 165, 0.88);
+  
 }
 /*Termina sección de titulo y logo*/
 
@@ -101,7 +102,7 @@ font-size: 16px;
     font-size: 24px;
 }
 
-.image-first-screen  {
+.image-first-screen img {
   float: right;
   padding-top: 40px;
 }
@@ -193,72 +194,11 @@ table, th, td {
 
  /* desktop first, empezando por pantalla más grande*/
 
- @media screen and (max-width:1024px){
-  .options-bar li{
-    margin-right: 100px;
-   }
-  .index-text{
-    font-size: 20px;
-    width: 50%;
-  }
-
-.image-first-screen  {
-  width: 50%;
-}
-
-.definition1 h3 {
-  padding-top: 60px;
-  padding-left: 90px;
-
-}
-.whatis-text{
-  font-size: 20px;
-}
-
-.indicators1 h3{
-  font-size: 24px;
-}
-
-#selectionScreen{
-  margin-left: 362px;
-}
-.country-selection, .gender-selection{
-  font-size: 20px;
-}
-#next-button{
-  margin-left: 90px;
-}
-.indicators1 span{
-  font-size: 20px;
-}
-
-#selectIndicators{
-  width: 800px;
-  margin-left: 100px;
-  font-size: 12px;
- }
-
- #indicator-button{
-  width: 151px;
-  margin-left: 400px;
-  margin-top: 20px;
-  font-size: 14px;
-}
-}
 
 
- @media screen and (max-width:767px){
-  #logo span {
-    font-size: 32px;
-    margin-left: 10px;
-   }
-   #logo img{
-   width: 90px;
-   }
-   #head-bar{
-  height: 150px;
-  width: 395px;
-   }
+ @media screen and (max-width:767px)and (min-with:479px){
+ 
+  
    .options-bar li{
     margin-right: 30px;
     width: 395px;
@@ -273,11 +213,18 @@ table, th, td {
   .index-text{
     font-size: 18px;
   }
-
-  /*.image-first-screen  {
-  width: inherit;
-  max-width: 50%;
-  }*/
+  #index{
+    width: 100px;
+  }
+  #all-pages{
+    width: 0px;
+  }
+  
+.image-first-screen  {
+  width:200px;
+  height: 200px;
+  margin: 150px;
+}
 
 .definition1 h3 {
   padding-top: 60px;
@@ -322,36 +269,60 @@ table, th, td {
 
 
 @media screen and (max-width:480px){
-  #logo span {
-    font-size: 28px;
-    margin-left: 0px;
+ 
+   
+  #head-bar{
+    height: 120px;
+  } 
+  #head-bar img{
+     width:100px;
+     float: left;
    }
-   #logo img{
-   width: 50px;
-   }
-   #head-bar{
-  height: 120px;
-   }
-   .options-bar li{
+  .options-bar li{
     margin-right: 30px;
     margin-left: 50px;
+    
    }
    .options-bar li a{
     font-size: 14px;
     }
     
-  .index-text{
-    font-size: 18px;
-  }
 
-  /*.image-first-screen  {
-  width: inherit;
-  max-width: 50%;
-  }*/
+ header figure{
+   width: 100%;
+ } 
+
+
+}
+ #logo span{
+  text-align: justify;  
+  margin: 20px;
+  padding: 0px;
+  width: 100%;
+  font-size: 20px;
+
+}
+
+.image-first-screen img {
+  width: 100%;
+  float: left;
+  padding-top: 40px;
+}
+
+.index-text{
+  width: 100%;
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 100px;
+  font-family: Roboto;
+  font-size: 24px;
+}
 
 .definition1 h3 {
   padding-top: 60px;
   padding-left: 90px;
+
 
 }
 .whatis-text{
@@ -372,7 +343,9 @@ table, th, td {
   margin-left: 50px;
 }
 .indicators1 span{
+  
   font-size: 18px;
+  
 }
 
 #selectIndicators{
