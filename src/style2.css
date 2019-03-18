@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Play|Source+Sans+Pro');
+/*@import url('https://fonts.googleapis.com/css?family=Play|Source+Sans+Pro');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Source Sans Pro', sans-serif;
-}
+}*/
 
 /**************HEADER*****************************/
-header label {
+/*header label {
     float: right;
     font-size: 28px;
     margin: 6px 0;
@@ -38,10 +38,13 @@ header h1 {
 
 header .contenedor {
     display: table;
-}
+}*/
 /************MENU*********************************************/
-#menu-bar {
+/*#menu-bar {
     display: none;
+}
+.class-opt-menu{
+    display: block;
 }
 .menu {
     position: absolute;
@@ -61,7 +64,10 @@ header .contenedor {
     text-decoration: none;
     padding: 15px;
     border-bottom: 1px solid rgba(255,255,255,0.3);
+    text-align: left;
+    
 }
+
 
 .menu a:hover {
     background: rgba(255,255,255,0.3);
@@ -69,8 +75,38 @@ header .contenedor {
 
 #menu-bar:checked ~ .menu {
     transform: translateX(0%);
-}
+}*/
    
-    .menu a {
-        border: none;
-    }
+  
+/***********************Section*********************/
+/*section {
+    width: 100%;  
+    margin-bottom: 25px;
+    font-size: 28px;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+}
+
+
+
+main{
+    background-image: url(Images/map_latin_america.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color:  #000000d7; 
+  }
+
+
+  #indicators{
+    display: none;
+  }
+  #index{
+    display: block;
+  }
+  #definition{
+    display: none;
+  }*/
