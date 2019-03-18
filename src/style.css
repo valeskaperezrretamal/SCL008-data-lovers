@@ -328,6 +328,7 @@ table, th, td {
    }
    .options-bar li{
     margin-right: 30px;
+    margin-left: 50px;
    }
    .options-bar li a{
     font-size: 14px;
