@@ -250,10 +250,10 @@ table, th, td {
  @media screen and (max-width:767px){
   #logo span {
     font-size: 32px;
-    margin-left: 100px;
+    margin-left: 10px;
    }
    #logo img{
-   width: 150px;
+   width: 90px;
    }
    #head-bar{
   height: 150px;
